@@ -77,16 +77,6 @@ M.config = function()
       r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
     },
 
-    i = {
-      name = "+iron",
-      i = { "<cmd>IronRepl<cr>", "IronRepl" },
-      r = { "<cmd>IronRestart<cr>", "Restart" },
-      f = { "<cmd>IronFocus<cr>", "Focus" },
-      h = { "<cmd>IronHide<cr>", "Hide" },
-      s = { "<cmd>lua require('iron.core').send_line()<cr>", "Send line" },
-      q = { "<cmd>lua require('iron.core').close_repl()<cr>", "Close" }
-    },
-
     l = { "<cmd>Lazy<cr>", "Lazy" },
   }
 
@@ -101,13 +91,6 @@ M.config = function()
 
   local v_leader_mappings = {
     ["/"] = { "<Plug>(comment_toggle_linewise_visual)<CR>", "Comment" },
-
-    i = {
-      name = "+iron",
-      i = { "<cmd>IronRepl<cr>", "IronRepl" },
-      r = { "<cmd>IronRestart<cr>", "Restart" },
-      s = { "<cmd>lua require('iron.core').visual_send()<cr>", "Send lines" },
-    },
   }
 
   local v_leader_opts = {
