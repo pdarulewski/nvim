@@ -1,34 +1,47 @@
 # nvim
 
 ## [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
-<img width="1318" alt="alpha" src="https://github.com/pdarulewski/nvim/assets/28163067/75680a6f-42c5-44aa-be3d-6f923e40ec80">
+![alpha](https://github.com/pdarulewski/nvim/assets/28163067/04a07063-2709-425c-b058-2f5818bd385a)
 
 ## [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
-<img width="1318" alt="whichkey" src="https://github.com/pdarulewski/nvim/assets/28163067/25f23911-222e-4189-ba33-5efdbe7bd847">
+![whichkey](https://github.com/pdarulewski/nvim/assets/28163067/f9719e5b-0957-49d9-ae3d-bf501734c578)
 
 ## [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim)
-<img width="1318" alt="lazygit" src="https://github.com/pdarulewski/nvim/assets/28163067/9f3c6732-8b6d-4917-a5a3-9a4d3cb851ff">
+![lazygit](https://github.com/pdarulewski/nvim/assets/28163067/7ed45549-287c-4def-83d4-2526ee7dbd19)
 
 ## [hrsh7th/nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-<img width="1318" alt="cmp" src="https://github.com/pdarulewski/nvim/assets/28163067/a162e283-175f-417f-9da5-4b75a8383155">
+![cmp](https://github.com/pdarulewski/nvim/assets/28163067/59a4c0fa-5b82-4632-93ee-a8b5c0fc1461)
 
 ## [github/copilot.vim](https://github.com/github/copilot.vim)
-<img width="1318" alt="copilot" src="https://github.com/pdarulewski/nvim/assets/28163067/2c225a19-d26b-4dc5-af3e-cfb8a5a840f0">
+![copilot](https://github.com/pdarulewski/nvim/assets/28163067/c3745c45-11ba-445b-a069-f1a907f3eeb9)
 
 ## [ghillb/cybu.nvim](https://github.com/ghillb/cybu.nvim)
-<img width="1318" alt="cybu" src="https://github.com/pdarulewski/nvim/assets/28163067/c7239f4a-93b0-4108-bea5-038a39ef2ab4">
+![cybu](https://github.com/pdarulewski/nvim/assets/28163067/6ef8823e-2912-4d65-b1e6-903ccc255c12)
 
 ## [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap) and [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-<img width="1318" alt="dap" src="https://github.com/pdarulewski/nvim/assets/28163067/8d99c7d2-429a-46e1-a85e-2e6964852816">
+![dap](https://github.com/pdarulewski/nvim/assets/28163067/77146580-6349-47bf-9550-531a719d9ca4)
 
 ## [phaazon/hop.nvim](https://github.com/phaazon/hop.nvim)
-<img width="1318" alt="hop" src="https://github.com/pdarulewski/nvim/assets/28163067/a6dfa5d5-7ef3-4346-9027-b529968ad87c">
+![hop](https://github.com/pdarulewski/nvim/assets/28163067/e493b0d5-d2ab-438d-9efb-801b84305cb2)
 
 ## [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim/tree/v2.x)
-<img width="1318" alt="lsp-zero" src="https://github.com/pdarulewski/nvim/assets/28163067/eb78156d-a45d-4da7-9abc-30d176ecee09">
+![lsp-zero](https://github.com/pdarulewski/nvim/assets/28163067/e7ebb7c0-cdf5-4a09-8384-11c5764e20c2)
 
 ## [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-<img width="1318" alt="telescope" src="https://github.com/pdarulewski/nvim/assets/28163067/fb19e455-3c5b-4fd3-81c2-7fdac577748c">
+![telescope](https://github.com/pdarulewski/nvim/assets/28163067/0ecc97ed-0fcd-49b5-9ec5-9d7ef2223d93)
 
 ## [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
-<img width="1318" alt="toggle-term" src="https://github.com/pdarulewski/nvim/assets/28163067/7c3cb91c-40b5-4499-bbe6-ef047b42e216">
+![toggle-term](https://github.com/pdarulewski/nvim/assets/28163067/7822fbdb-b441-41d6-b36d-ae2c48213599)
+
+
+
+
+
+
+
+
+
+
+
+
+
