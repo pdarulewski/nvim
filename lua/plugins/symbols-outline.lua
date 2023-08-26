@@ -1,3 +1,5 @@
+-- symbols tree
+
 local M = {
   "simrat39/symbols-outline.nvim",
   event = "VeryLazy",
@@ -9,7 +11,9 @@ M.config = function()
     return
   end
 
-  symbols.setup()
+  symbols.setup({
+    width = 15,
+  })
 end
 
 return M

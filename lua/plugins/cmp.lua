@@ -1,3 +1,5 @@
+-- completions for functions and variables
+
 local M = {
   "hrsh7th/nvim-cmp",
   event = "VeryLazy",

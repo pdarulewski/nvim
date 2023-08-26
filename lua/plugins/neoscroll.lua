@@ -1,3 +1,5 @@
+-- scroll without losing cursor position
+
 local M = {
   "karb94/neoscroll.nvim",
   event = "VeryLazy",

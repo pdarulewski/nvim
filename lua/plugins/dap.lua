@@ -1,3 +1,5 @@
+-- debugging configuration per language
+
 local M = {
   "mfussenegger/nvim-dap",
   event = "VeryLazy",

@@ -1,3 +1,5 @@
+-- bottom statusline
+
 local M = {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",

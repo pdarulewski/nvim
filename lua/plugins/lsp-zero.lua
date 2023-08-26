@@ -1,3 +1,5 @@
+-- lsp support
+
 local M = {
   "VonHeikemen/lsp-zero.nvim",
   event = "VeryLazy",

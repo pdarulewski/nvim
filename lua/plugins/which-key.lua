@@ -1,3 +1,5 @@
+-- keymaps with a window after the leader key
+
 local M = {
   "folke/which-key.nvim",
   event = "VeryLazy",
@@ -18,6 +20,7 @@ M.config = function()
   local n_leader_mappings = {
     c = { "<cmd>bp|bd #<cr>", "Close Buffer" },
     e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    s = { "<cmd>SymbolsOutline<cr>", "Symbols" },
     g = { "<cmd>LazyGit<cr>", "LazyGit" },
     n = { "<cmd>noh<cr>", "No highlight" },
     p = { "<cmd>Telescope projects<cr>", "Projects" },

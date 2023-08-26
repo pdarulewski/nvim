@@ -1,7 +1,9 @@
-vim.o.nu = true
-vim.o.relativenumber = true
-vim.o.list = true
-vim.o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·" -- white characters
+vim.o.nu = true             -- line numbers
+vim.o.relativenumber = true -- relative line numbers
+
+vim.o.list = true           -- white characters
+vim.o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·"
+
 vim.o.colorcolumn = "120"
 vim.o.smartindent = true
 vim.o.scrolloff = 6

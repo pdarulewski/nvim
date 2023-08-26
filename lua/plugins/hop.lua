@@ -1,3 +1,5 @@
+-- hop anywhere in the file
+
 local M = {
   "phaazon/hop.nvim",
   event = "VeryLazy",

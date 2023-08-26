@@ -1,3 +1,5 @@
+-- treesitter for syntax highlighting
+
 local M = {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",

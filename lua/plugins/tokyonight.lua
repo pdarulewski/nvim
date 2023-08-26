@@ -1,3 +1,5 @@
+-- tokyonight theme
+
 local M = {
   "folke/tokyonight.nvim",
   event = "VimEnter",

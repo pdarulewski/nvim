@@ -1,13 +1,13 @@
 local neovim_group = vim.api.nvim_create_augroup("neovim", { clear = true })
 
 vim.api.nvim_create_autocmd({ "FocusGained", "TermClose", "TermLeave" }, {
-  desc = "Check if we need to reload the file when it changed",
+  desc = "Check if we need to reload the file when it changed outside of neovim",
   command = "checktime",
   group = neovim_group,
 })
 
 vim.api.nvim_create_autocmd("BufReadPost", {
-  desc = "Open file at same location where it was opened last time",
+  desc = "Open file at same text location where it was opened last time",
   callback = function()
     vim.cmd([[silent! normal! g`"]])
   end,
@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 vim.api.nvim_create_autocmd({ "User" }, {
-  desc = "Remove statusline and tabline when in Alpha",
+  desc = "Remove statusline and tabline when in alpha-nvim welcome screen",
   pattern = { "AlphaReady" },
   callback = function()
     vim.cmd [[ set laststatus=0 | autocmd BufUnload <buffer> set laststatus=3 ]]

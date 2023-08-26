@@ -1,8 +1,10 @@
+-- welcome screen
+
 local M = {
   'goolord/alpha-nvim',
-  event = "VimEnter",
-  dependencies = { 'nvim-tree/nvim-web-devicons' },
-  opts = { require 'alpha.themes.startify'.config }
+  config = function()
+    require 'alpha'.setup(require 'alpha.themes.dashboard'.config)
+  end
 }
 
 M.config = function()

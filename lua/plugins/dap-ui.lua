@@ -1,3 +1,5 @@
+-- ui for dap
+
 local M = {
   "rcarriga/nvim-dap-ui",
   event = "VeryLazy",

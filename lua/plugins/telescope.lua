@@ -1,3 +1,5 @@
+-- telescope windows with fuzzy search
+
 local M = {
   "nvim-telescope/telescope.nvim",
   event = "VeryLazy",
@@ -13,7 +15,7 @@ M.config = function()
     return
   end
 
-  telescope.setup {
+  telescope.setup({
     pickers = {
       live_grep = {
         additional_args = function(opts)
@@ -21,7 +23,7 @@ M.config = function()
         end
       },
     },
-  }
+  })
 end
 
 return M

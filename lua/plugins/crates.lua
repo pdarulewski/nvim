@@ -1,3 +1,5 @@
+-- managing crates dependencies in rust
+
 local M = {
   "saecki/crates.nvim",
   event = "VeryLazy",

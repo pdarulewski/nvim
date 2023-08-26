@@ -1,3 +1,5 @@
+-- extraction of functions, variables, etc.
+
 local M = {
   "ThePrimeagen/refactoring.nvim",
   event = "VeryLazy",
@@ -14,7 +16,7 @@ M.config = function()
     return
   end
 
-  require('refactoring').setup({
+  refactoring.setup({
     prompt_func_return_type = {
       go = true,
     },

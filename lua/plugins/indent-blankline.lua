@@ -1,3 +1,5 @@
+-- visual guides for indentation
+
 local M = {
   "lukas-reineke/indent-blankline.nvim",
   event = "VeryLazy",

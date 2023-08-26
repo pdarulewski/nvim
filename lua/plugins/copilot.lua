@@ -1,3 +1,5 @@
+-- github copilot
+
 local M = {
   "github/copilot.vim",
   event = "VeryLazy",

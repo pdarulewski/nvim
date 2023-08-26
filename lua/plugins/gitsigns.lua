@@ -1,3 +1,5 @@
+-- git status indicators in the gutter
+
 local M = {
   "lewis6991/gitsigns.nvim",
   event = "VeryLazy",

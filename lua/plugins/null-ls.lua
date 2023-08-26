@@ -1,3 +1,5 @@
+-- formatters and style diagnostics
+
 local M = {
   "jose-elias-alvarez/null-ls.nvim",
   event = "VeryLazy",

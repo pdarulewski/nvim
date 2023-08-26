@@ -1,3 +1,5 @@
+-- location within a module, class, method, function, etc.
+
 local M = {
   "SmiteshP/nvim-navic",
   event = "VeryLazy",

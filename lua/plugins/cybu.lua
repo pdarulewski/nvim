@@ -1,3 +1,5 @@
+-- buffer switcher
+
 local M = {
   "ghillb/cybu.nvim",
   event = "VeryLazy",

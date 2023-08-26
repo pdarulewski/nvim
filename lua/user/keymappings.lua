@@ -1,3 +1,5 @@
+-- remaining keymappings
+
 local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
@@ -18,7 +20,7 @@ map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts)
 -- paste without replacing content in the clipboard
 map("x", "<leader>p", '"_dP', opts)
 
--- keep cursor in place while J
+-- keep cursor in place while removing newlines with J
 map("n", "J", "mzJ`z", opts)
 
 map("x", "<Tab>", ">gv", opts)

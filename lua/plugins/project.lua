@@ -1,3 +1,5 @@
+-- projects in telescope
+
 local M = {
   "ahmedkhalf/project.nvim",
   event = "VeryLazy",
