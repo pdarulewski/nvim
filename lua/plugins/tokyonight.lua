@@ -6,6 +6,11 @@ local M = {
 }
 
 M.config = function()
+	local white = "#ffffff"
+	local grey = "#84aad6"
+	local magenta = "#ff476f"
+	local orange = "#ff692d"
+
 	require("tokyonight").setup({
 		style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
 		transparent = true, -- Enable this to disable setting the background color
@@ -13,8 +18,8 @@ M.config = function()
 		styles = {
 			comments = { italic = true },
 			keywords = { italic = true },
-			-- sidebars = "transparent", -- style for sidebars, see below
-			-- floats = "transparent",   -- style for floating windows
+			sidebars = "transparent", -- style for sidebars, see below
+			floats = "transparent", -- style for floating windows
 			-- sidebars = "dark", -- style for sidebars, see below
 			-- floats = "dark",   -- style for floating windows
 		},
@@ -24,20 +29,23 @@ M.config = function()
 			hl.LineNr = { fg = colors.cyan }
 			hl.CursorLineNr = { fg = colors.yellow, bold = true }
 
-			hl.String = {
-				fg = colors.cyan,
-				-- bold = true,
-				-- style = { italic = true },
-			}
-			hl["@property"] = { fg = colors.blue1 }
-			hl.Function = { fg = colors.blue1, bold = true }
+			hl.String = { fg = colors.cyan } -- "string"
+			hl["@string.documentation"] = { fg = grey }
+
+			hl["@property"] = { fg = colors.blue1 } -- k.property
+			hl["@field"] = { fg = white } -- class K: property: int
+			hl["@constructor"] = { fg = colors.blue2, bold = true } -- __init__
+			hl.Function = { fg = colors.blue2 } -- def f():
+			hl.Type = { fg = colors.blue2, bold = true } -- class K:
+			-- hl.Constant = { fg = magenta }
+			hl["@variable.builtin"] = { fg = grey, style = { italic = true } } -- self
 			hl["@parameter"] = { fg = colors.purple }
-			hl["@string.documentation"] = { fg = "#84aad6" }
 
-			-- if, for
-			hl.Statement = { fg = colors.magenta, style = { italic = true } }
+			hl.Statement = { fg = colors.magenta, style = { italic = true } } -- if, for
+			-- hl["@label"] = { fg = colors.red }
+			-- hl["@namespace"] = { fg = colors.red }
 
-			-- in keyword in python
+			-- in, =, + keyword in python
 			-- hl["@operator"] = { fg = colors.magenta, style = { italic = true } }
 
 			-- def
@@ -46,8 +54,9 @@ M.config = function()
 
 		on_colors = function(colors)
 			colors.hint = colors.orange
-			colors.comment = "#84aad6"
-			colors.error = colors.red1
+			colors.comment = grey
+			colors.error = magenta
+			-- colors.orange = orange
 		end,
 	})
 
