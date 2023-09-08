@@ -17,6 +17,7 @@ M.config = function()
       -- general
       null_ls.builtins.formatting.trim_newlines,
       null_ls.builtins.formatting.trim_whitespace,
+
       null_ls.builtins.completion.spell,
 
       null_ls.builtins.formatting.stylua,
@@ -26,6 +27,7 @@ M.config = function()
       null_ls.builtins.formatting.ruff,
 
       null_ls.builtins.diagnostics.ruff,
+
       -- go
       null_ls.builtins.formatting.gofumpt,
       null_ls.builtins.diagnostics.golangci_lint,
