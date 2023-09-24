@@ -11,7 +11,28 @@ M.config = function()
     return
   end
 
-  dapui.setup()
+  dapui.setup({
+    layouts = {
+      {
+        elements = {
+          { id = "scopes",      size = 0.25 },
+          { id = "breakpoints", size = 0.25 },
+          { id = "stacks",      size = 0.25 },
+          { id = "watches",     size = 0.25 },
+        },
+        position = "left",
+        size = 50,
+      },
+      {
+        elements = {
+          { id = "repl",    size = 0.5 },
+          { id = "console", size = 0.5 },
+        },
+        position = "bottom",
+        size = 10,
+      },
+    },
+  })
 
   local ok, dap = pcall(require, "dap")
   if not ok then
@@ -19,7 +40,7 @@ M.config = function()
   end
 
   dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open()
+    dapui.open({ reset = true })
   end
 end
 

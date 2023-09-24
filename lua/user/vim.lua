@@ -1,7 +1,7 @@
-vim.o.nu = true -- line numbers
+vim.o.nu = true             -- line numbers
 vim.o.relativenumber = true -- relative line numbers
 
-vim.o.list = true -- white characters
+vim.o.list = true           -- white characters
 vim.o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·"
 
 vim.o.colorcolumn = "120"
@@ -36,14 +36,14 @@ vim.o.foldlevelstart = 99
 vim.o.foldmethod = "indent"
 
 vim.opt.fillchars = {
-	vert = "▕", -- alternatives │
-	fold = " ",
-	eob = " ", -- suppress ~ at EndOfBuffer
-	diff = "╱", -- alternatives = ⣿ ░ ─
-	msgsep = "‾",
-	foldopen = "▾",
-	foldsep = "│",
-	foldclose = "▸",
+  vert = "▕", -- alternatives │
+  fold = " ",
+  eob = " ", -- suppress ~ at EndOfBuffer
+  diff = "╱", -- alternatives = ⣿ ░ ─
+  msgsep = "‾",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸",
 }
 
 vim.o.cmdheight = 0
