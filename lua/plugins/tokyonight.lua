@@ -6,10 +6,19 @@ local M = {
 }
 
 M.config = function()
-	local white = "#ffffff"
-	local grey = "#84aad6"
+	-- catppuccin macchiato colors
+	local text = "#cad3f5"
+	local overlay_1 = "#8087a2"
+	local sapphire = "#7dc4e4"
+	local peach = "#f5a97f"
+	local blue = "#8aadf4"
+	local mauve = "#c6a0f6"
+	local green = "#a6da95"
+	local pink = "#f5bde6"
 	local magenta = "#ff476f"
 	local orange = "#ff692d"
+	local teal = "#8bd5ca"
+	local lavender = "#b7bdf8"
 
 	require("tokyonight").setup({
 		style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
@@ -26,22 +35,24 @@ M.config = function()
 		sidebars = { "qf", "terminal", "packer" },
 		dim_inactive = true,
 		on_highlights = function(hl, colors)
-			hl.LineNr = { fg = colors.cyan }
-			hl.CursorLineNr = { fg = colors.yellow, bold = true }
+			local sapphire = colors.cyan
 
-			hl.String = { fg = colors.cyan } -- "string"
-			hl["@string.documentation"] = { fg = grey }
+			hl.LineNr = { fg = sapphire }
+			hl.CursorLineNr = { fg = peach, bold = true }
+
+			hl.String = { fg = sapphire } -- "string"
+			hl["@string.documentation"] = { fg = overlay_1 }
 
 			hl["@property"] = { fg = colors.blue1 } -- k.property
-			hl["@field"] = { fg = white } -- class K: property: int
+			hl["@field"] = { fg = text } -- class K: property: int
 			hl["@constructor"] = { fg = colors.blue2, bold = true } -- __init__
 			hl.Function = { fg = colors.blue2 } -- def f():
 			hl.Type = { fg = colors.blue2, bold = true } -- class K:
 			-- hl.Constant = { fg = magenta }
-			hl["@variable.builtin"] = { fg = grey, style = { italic = true } } -- self
-			hl["@parameter"] = { fg = colors.purple }
+			hl["@variable.builtin"] = { fg = overlay_1, style = { italic = true } } -- self
+			hl["@parameter"] = { fg = peach }
 
-			hl.Statement = { fg = colors.magenta, style = { italic = true } } -- if, for
+			hl.Statement = { fg = mauve, style = { italic = true } } -- if, for
 			-- hl["@label"] = { fg = colors.red }
 			-- hl["@namespace"] = { fg = colors.red }
 
@@ -54,7 +65,7 @@ M.config = function()
 
 		on_colors = function(colors)
 			colors.hint = colors.orange
-			colors.comment = grey
+			colors.comment = overlay_1
 			colors.error = magenta
 			-- colors.orange = orange
 		end,
