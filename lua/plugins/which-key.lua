@@ -129,6 +129,13 @@ M.config = function()
 			},
 			c = { "<cmd>lua require('dapui').close()<cr>", "Close UI" },
 		},
+
+		v = {
+			name = "+vim",
+			s = { ":'<,'>sort<cr>", "Sort" },
+			S = { ":'<,'>sort!<cr>", "Sort inverse" },
+			d = { ":'<,'>sort u<cr>", "Delete duplicated lines" },
+		},
 	}
 
 	local v_leader_opts = {
