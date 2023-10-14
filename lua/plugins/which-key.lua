@@ -112,6 +112,23 @@ M.config = function()
 
 	local v_leader_mappings = {
 		["/"] = { "<Plug>(comment_toggle_linewise_visual)<CR>", "Comment" },
+
+		d = {
+			name = "+dap",
+			p = {
+				name = "+python",
+				s = {
+					"<cmd>lua require('dap-python').debug_selection({ config = { justMyCode = false } })<cr>",
+					"Debug Selection",
+				},
+			},
+			u = { "<cmd>lua require('dapui').toggle({ reset = true })<cr>", "Toggle UI" },
+			r = {
+				"<cmd>lua require('dapui').close()<cr><cmd>lua require('dapui').toggle({ reset = true })<cr>",
+				"Toggle UI",
+			},
+			c = { "<cmd>lua require('dapui').close()<cr>", "Close UI" },
+		},
 	}
 
 	local v_leader_opts = {
