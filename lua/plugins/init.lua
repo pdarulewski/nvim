@@ -1,30 +1,30 @@
 -- plugins that don't need any setup
 --
 return {
-	-- diagnostics, references in quickfix lists
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
+  -- diagnostics, references in quickfix lists
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
 
-	-- lazygit in nvim terminal
-	{ "kdheepak/lazygit.nvim" },
+  -- lazygit in nvim terminal
+  { "kdheepak/lazygit.nvim" },
 
-	-- go back to any previous change
-	{ "mbbill/undotree" },
+  -- go back to any previous change
+  { "mbbill/undotree" },
 
-	-- highlight all words under cursor
-	{ "RRethy/vim-illuminate" },
+  -- highlight all words under cursor
+  { "RRethy/vim-illuminate" },
 
-	-- comment lines
-	{ "numToStr/Comment.nvim" },
+  -- comment lines
+  { "numToStr/Comment.nvim" },
 
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-	},
-	{ "EdenEast/nightfox.nvim" },
-	{ "nordtheme/vim" },
-	{ "AlexvZyl/nordic.nvim" },
-	{ "rebelot/kanagawa.nvim" },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+  },
+  { "EdenEast/nightfox.nvim" },
+  { "nordtheme/vim" },
+  { "AlexvZyl/nordic.nvim" },
+  { "rebelot/kanagawa.nvim" },
 }
