@@ -2,15 +2,12 @@
 
 local M = {
 	"VonHeikemen/lsp-zero.nvim",
-	event = "VeryLazy",
-	branch = "v2.x",
-	build = ":MasonUpdate",
+	branch = "v3.x",
 	dependencies = {
-		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
-		"williamboman/mason-lspconfig.nvim",
-		"hrsh7th/nvim-cmp",
+		"neovim/nvim-lspconfig",
 		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/nvim-cmp",
 		"L3MON4D3/LuaSnip",
 	},
 }
@@ -21,25 +18,6 @@ M.config = function()
 		return
 	end
 	lsp.preset({})
-
-	lsp.ensure_installed({
-		"bashls",
-		"lua_ls",
-		"rust_analyzer",
-		"pyright",
-		"gopls",
-
-		"dockerls",
-		"docker_compose_language_service",
-		"html",
-		"jsonls",
-		"vimls",
-		"yamlls",
-		"taplo",
-		"sqlls",
-		"marksman",
-		"ltex",
-	})
 
 	vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
 	vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
@@ -63,9 +41,6 @@ M.config = function()
 	})
 
 	lsp.setup()
-
-	-- format on save
-	vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 	local kind_icons = {
 		Text = "",

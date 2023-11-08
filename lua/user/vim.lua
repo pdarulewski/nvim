@@ -46,6 +46,6 @@ vim.opt.fillchars = {
   foldclose = "▸",
 }
 
-vim.o.cmdheight = 0
+vim.o.cmdheight = 0 -- disable space between tmux and lualine
 
 vim.cmd("set shell=zsh")

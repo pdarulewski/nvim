@@ -10,13 +10,6 @@ M.config = function()
   if not ok then
     return
   end
-
-  crates.setup({
-    null_ls = {
-      enabled = true,
-      name = "crates.nvim",
-    },
-  })
 end
 
 return M
