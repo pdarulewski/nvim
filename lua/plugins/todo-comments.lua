@@ -1,4 +1,12 @@
 -- highlight todo, fixme comments
+-- FIX:
+-- TODO:
+-- HACK:
+-- WARN:
+-- PERF:
+-- NOTE:
+-- TEST:
+-- SECTION:
 
 local M = {
   "folke/todo-comments.nvim",
@@ -15,8 +23,16 @@ M.config = function()
 
   todo.setup({
     keywords = {
-      NOTE = { alt = { "SECTION", "REVIEW" } }
-    }
+      NOTE = { alt = { "SECTION", "REVIEW", "INFO" }, color = "#8087a2" },
+    },
+    colors = {
+      error = { "DiagnosticError", "ErrorMsg", "#DC2626" },
+      warning = { "DiagnosticWarn", "WarningMsg", "#FBBF24" },
+      info = { "DiagnosticInfo", "#2563EB" },
+      hint = { "DiagnosticHint", "#10B981" },
+      default = { "Identifier", "#7C3AED" },
+      test = { "Identifier", "#FF00FF" },
+    },
   })
 end
 

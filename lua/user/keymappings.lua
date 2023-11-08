@@ -18,7 +18,7 @@ map("v", "<M-k>", ":m '<-2<CR>gv=gv", opts)
 map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts)
 
 -- paste without replacing content in the clipboard
-map("x", "<leader>p", '"_dP', opts)
+map("x", "<leader>p", '"_dp', opts)
 
 -- keep cursor in place while removing newlines with J
 map("n", "J", "mzJ`z", opts)
