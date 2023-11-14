@@ -106,6 +106,7 @@ M.config = function()
 
 		L = { "<cmd>Lazy<cr>", "Lazy" },
 		M = { "<cmd>Mason<cr>", "Mason" },
+		x = { "<cmd>Lazy reload tokyonight.nvim<cr>", "Reload theme" },
 	}
 
 	local n_leader_opts = {
