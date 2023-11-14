@@ -19,19 +19,27 @@ M.config = function()
 	end
 	lsp.preset({})
 
-	vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", { noremap = true, silent = true })
-	vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
-	vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
-	vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>")
-	vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>")
-	vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
-	vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>")
+	vim.api.nvim_create_autocmd("LspAttach", {
+		desc = "LSP actions",
+		callback = function(event)
+			local opts = { buffer = event.buf }
 
-	vim.keymap.set("n", "gr", "<cmd>TroubleToggle lsp_references<cr>")
-	vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>")
+			vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", opts)
+			vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
+			vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
+			vim.keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<cr>", opts)
+			vim.keymap.set("n", "go", "<cmd>lua vim.lsp.buf.type_definition()<cr>", opts)
 
-	vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>")
-	vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>")
+			vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+			vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
+			vim.keymap.set("n", "gR", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+			vim.keymap.set("n", "ga", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+
+			vim.keymap.set("n", "gl", "<cmd>lua vim.diagnostic.open_float()<cr>", opts)
+			vim.keymap.set("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<cr>", opts)
+			vim.keymap.set("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<cr>", opts)
+		end,
+	})
 
 	lsp.set_sign_icons({
 		error = "✘",

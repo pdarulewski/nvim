@@ -14,37 +14,41 @@ M.config = function()
 	local lsp_zero = require("lsp-zero")
 
 	mason_lspconfig.setup({
-		ensure_installed = {
-			"bashls",
-			"lua_ls",
-			"rust_analyzer",
-			"pyright",
-			"gopls",
-
-			"dockerls",
-			"docker_compose_language_service",
-			"html",
-			"jsonls",
-			"vimls",
-			"yamlls",
-			"taplo",
-			"sqlls",
-			"marksman",
-			"ltex",
-		},
-		automatic_installation = true,
 		handlers = {
 			lsp_zero.default_setup,
 		},
 	})
 	local registry = require("mason-registry")
-	local linters = {
+	local packages = {
+		-- formatters
+		"bashls",
+		"lua_ls",
+		"rust_analyzer",
+		"pyright",
+		"gopls",
+
+		"dockerls",
+		"docker_compose_language_service",
+		"html",
+		"jsonls",
+		"vimls",
+		"yamlls",
+		"taplo",
+		"sqlls",
+		"marksman",
+		"ltex",
+		"shfmt",
+		"sql_formatter",
+
+		-- linters
 		"ansible-lint",
 		"markdownlint",
 		"yamllint",
 		"shellcheck",
+		"codespell",
 	}
-	for _, pkg_name in ipairs(linters) do
+
+	for _, pkg_name in ipairs(packages) do
 		local ok, pkg = pcall(registry.get_package, pkg_name)
 		if ok then
 			if not pkg:is_installed() then

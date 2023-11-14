@@ -18,7 +18,8 @@ map("v", "<M-k>", ":m '<-2<CR>gv=gv", opts)
 map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts)
 
 -- paste without replacing content in the clipboard
-map("x", "<leader>p", '"_dp', opts)
+map("v", "<leader>p", '"_dp', opts)
+map("v", "<leader>P", '"_dP', opts)
 
 -- keep cursor in place while removing newlines with J
 map("n", "J", "mzJ`z", opts)
@@ -49,11 +50,11 @@ map("i", "jj", "<ESC>:w<cr>", opts)
 -- Code above will check if u are deleting empty line, if so - use black hole register.
 -- [src: https://www.reddit.com/r/neovim/comments/w0jzzv/comment/igfjx5y/?utm_source=share&utm_medium=web2x&context=3]
 local function smart_dd()
-  if vim.api.nvim_get_current_line():match("^%s*$") then
-    return '"_dd'
-  else
-    return "dd"
-  end
+	if vim.api.nvim_get_current_line():match("^%s*$") then
+		return '"_dd'
+	else
+		return "dd"
+	end
 end
 
 map("n", "dd", smart_dd, { noremap = true, expr = true })
