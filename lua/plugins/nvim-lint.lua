@@ -6,12 +6,12 @@ local M = {
 }
 
 M.config = function()
-	local ok, lint = pcall(require, "nvim-lint")
+	local ok, lint = pcall(require, "lint")
 	if not ok then
 		return
 	end
 
-	lint.setup({
+	lint.linters_by_ft = {
 		lua = { "luacheck" },
 		python = { "ruff" },
 		markdown = { "markdownlint" },
@@ -21,6 +21,12 @@ M.config = function()
 		ansible = { "ansible-lint" },
 		sh = { "shellcheck" },
 		["*"] = { "codespell" },
+	}
+
+	vim.api.nvim_create_autocmd({ "TextChanged", "BufReadPost" }, {
+		callback = function()
+			require("lint").try_lint()
+		end,
 	})
 end
 return M

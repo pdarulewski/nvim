@@ -13,7 +13,7 @@ M.config = function()
 	conform.setup({
 		formatters_by_ft = {
 			lua = { "stylua" },
-			python = { "ruff_fix", "ruff_format", "black" },
+			python = { "ruff_fix", "ruff_format" },
 			toml = { "taplo" },
 			go = { "gofumpt", "goimports-reviser", "golines" },
 			markdown = { "markdown-toc", "mdformat" },

@@ -1,5 +1,5 @@
 -- plugins that don't need any setup
---
+
 return {
 	-- diagnostics, references in quickfix lists
 	{

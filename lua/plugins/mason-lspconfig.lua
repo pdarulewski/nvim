@@ -29,7 +29,9 @@ M.config = function()
 
 		"dockerls",
 		"docker_compose_language_service",
+
 		"html",
+		"lemminx",
 		"jsonls",
 		"vimls",
 		"yamlls",
@@ -39,6 +41,8 @@ M.config = function()
 		"ltex",
 		"shfmt",
 		"sql_formatter",
+		"markdown-toc",
+		"mdformat",
 
 		-- linters
 		"ansible-lint",
