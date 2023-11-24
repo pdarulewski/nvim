@@ -11,7 +11,14 @@ M.config = function()
 		return
 	end
 
-	colorizer.setup()
+	colorizer.setup({
+		"*",
+		css = { names = true },
+	}, {
+		names = false,
+		rgb_fn = true,
+		hsl_fn = true,
+	})
 end
 
 return M
