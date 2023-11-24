@@ -69,7 +69,7 @@ M.config = function()
 
 			hl["@variable.builtin"] = { fg = text, style = { italic = true } } -- self
 			hl.Statement = { fg = mauve, style = { italic = true } } -- if, for
-			hl["@operator"] = { fg = mauve, style = { italic = true } } -- in, =, +
+			hl["@operator"] = { fg = mauve } -- in, =, +
 			hl["@keyword.function"] = { fg = mauve, style = { italic = true } } -- def
 		end,
 
