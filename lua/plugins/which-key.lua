@@ -30,6 +30,7 @@ M.config = function()
 		u = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
 		v = { "<cmd>VenvSelect<cr>", "Select venv" },
 
+		W = { "<cmd>noautocmd w<cr>", "Write without saving" },
 		c = { "<cmd>bp|bd #<cr>", "Close Buffer" },
 		q = { "<cmd>wa<cr><cmd>qa<cr>", "Quit" },
 
