@@ -23,6 +23,7 @@ M.config = function()
 			zsh = { "shfmt", "shellcheck" },
 			terraform = { "terraform_fmt" },
 			yaml = { "yamlfmt" },
+			json = { "prettier" },
 			["*"] = { "trim_newlines", "trim_whitespace", "codespell" },
 		},
 		notify_on_error = true,

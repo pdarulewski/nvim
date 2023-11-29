@@ -20,21 +20,20 @@ M.config = function()
 	})
 	local registry = require("mason-registry")
 	local packages = {
-		-- formatters
-		"bashls",
+		-- language servers
 		"lua_ls",
-		"rust_analyzer",
-		"pyright",
+		"bashls",
+		"yamlls",
 		"gopls",
-
+		"pyright",
+		"rust_analyzer",
 		"dockerls",
 		"docker_compose_language_service",
 
+		-- formatters
+		"luacheck",
 		"html",
 		"lemminx",
-		"jsonls",
-		"vimls",
-		"yamlls",
 		"taplo",
 		"sqlls",
 		"marksman",
@@ -43,9 +42,12 @@ M.config = function()
 		"sql_formatter",
 		"markdown-toc",
 		"mdformat",
+		"luacheck",
+		"prettier",
 
 		-- linters
 		"ansible-lint",
+		"jsonlint",
 		"markdownlint",
 		"yamllint",
 		"shellcheck",

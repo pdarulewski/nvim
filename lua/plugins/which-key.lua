@@ -26,7 +26,7 @@ M.config = function()
 		n = { "<cmd>noh<cr>", "No highlight" },
 		N = { "<cmd>lua require('notify').dismiss()<cr>", "Dismiss notifications" },
 
-		r = { ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", "Replace all" },
+		R = { ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", "Replace all" },
 		u = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
 		v = { "<cmd>VenvSelect<cr>", "Select venv" },
 
@@ -105,6 +105,12 @@ M.config = function()
 			l = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "List" },
 		},
 
+		r = {
+			name = "+rest",
+			r = { "<Plug>RestNvim<cr>", "Run" },
+			l = { "<Plug>RestNvimLast<cr>", "Run last" },
+			c = { "<Plug>RestNvimPreview<cr>", "cURL" },
+		},
 		L = { "<cmd>Lazy<cr>", "Lazy" },
 		M = { "<cmd>Mason<cr>", "Mason" },
 		x = { "<cmd>Lazy reload tokyonight.nvim<cr>", "Reload theme" },
