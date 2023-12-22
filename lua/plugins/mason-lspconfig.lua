@@ -19,6 +19,7 @@ M.config = function()
 		},
 	})
 	local registry = require("mason-registry")
+	-- FIXME: not really installing them on startup
 	local packages = {
 		-- language servers
 		"lua_ls",

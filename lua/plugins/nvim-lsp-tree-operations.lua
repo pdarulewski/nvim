@@ -1,4 +1,5 @@
 -- refactor imports after file moves
+-- FIXME: not working
 
 local M = {
 	"antosha417/nvim-lsp-file-operations",
