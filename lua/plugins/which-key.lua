@@ -151,6 +151,9 @@ M.config = function()
 			S = { ":'<,'>sort!<cr>", "Sort inverse" },
 			d = { ":'<,'>sort u<cr>", "Delete duplicated lines" },
 		},
+
+		["p"] = { '"_dP', "paste and keep" },
+		["P"] = { '"_dp', "paste and keep" },
 	}
 
 	local v_leader_opts = {

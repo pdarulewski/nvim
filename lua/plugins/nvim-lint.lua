@@ -20,6 +20,7 @@ M.config = function()
 		yaml = { "yamllint" },
 		ansible = { "ansible-lint" },
 		sh = { "shellcheck" },
+		env = { "shellcheck" },
 		["*"] = { "codespell" },
 	}
 
