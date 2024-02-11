@@ -11,12 +11,6 @@ map("n", "<C-h>", "<C-w>h", opts)
 map("n", "<C-j>", "<C-w>j", opts)
 map("n", "<C-k>", "<C-w>k", opts)
 
--- move lines up and down
-map("n", "<M-k>", ":m -2<cr>", opts)
-map("n", "<M-j>", ":m +1<cr>", opts)
-map("v", "<M-k>", ":m '<-2<CR>gv=gv", opts)
-map("v", "<M-j>", ":m '>+1<CR>gv=gv", opts)
-
 -- keep cursor in place while removing newlines with J
 map("n", "J", "mzJ`z", opts)
 
