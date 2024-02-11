@@ -16,6 +16,16 @@ M.config = function()
 
 	rest.setup({
 		result_split_in_place = true,
+		result = {
+			show_curl_command = true,
+			show_statistics = {
+				{
+					"time_total",
+					title = "Total Time: ",
+					type = "time",
+				},
+			},
+		},
 	})
 end
 
