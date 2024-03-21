@@ -34,10 +34,6 @@ M.config = function()
 		},
 	})
 
-	vim.keymap.set("n", "<M-g>", function()
-		require("dapui").eval()
-	end)
-
 	local ok, dap = pcall(require, "dap")
 	if not ok then
 		return

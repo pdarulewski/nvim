@@ -1,17 +1,19 @@
 -- git status indicators in the gutter
 
 local M = {
-  "lewis6991/gitsigns.nvim",
-  event = "VeryLazy",
+	"lewis6991/gitsigns.nvim",
+	event = "VeryLazy",
 }
 
 M.config = function()
-  local ok, gitsigns = pcall(require, "gitsigns")
-  if not ok then
-    return
-  end
+	local ok, gitsigns = pcall(require, "gitsigns")
+	if not ok then
+		return
+	end
 
-  gitsigns.setup()
+	gitsigns.setup({
+		current_line_blame = true,
+	})
 end
 
 return M

@@ -33,7 +33,7 @@ M.config = function()
 		W = { "<cmd>noautocmd w<cr>", "Write without saving" },
 		c = { "<cmd>bp|bd #<cr>", "Close Buffer" },
 		q = { "<cmd>wa<cr><cmd>qa<cr>", "Quit" },
-
+		i = { "<cmd>Inspect<cr>", "Inspect" },
 		["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>", "Comment" },
 
 		h = {

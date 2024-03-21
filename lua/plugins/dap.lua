@@ -34,6 +34,9 @@ M.config = function()
 	vim.keymap.set("n", "<F7>", function()
 		require("dap").close()
 	end)
+	vim.keymap.set("n", "<F8>", function()
+		require("dap").run_last()
+	end)
 
 	local ok, dap_python = pcall(require, "dap-python")
 	if not ok then

@@ -1,6 +1,5 @@
 local M = {
 	"williamboman/mason-lspconfig.nvim",
-	event = "VeryLazy",
 }
 
 M.config = function()
@@ -16,21 +15,25 @@ M.config = function()
 	mason_lspconfig.setup({
 		handlers = {
 			lsp_zero.default_setup,
+			lua_ls = function()
+				local lua_opts = lsp_zero.nvim_lua_ls()
+				require("lspconfig").lua_ls.setup(lua_opts)
+			end,
+		},
+		ensure_installed = {
+			"lua_ls",
+			"bashls",
+			"yamlls",
+			"gopls",
+			"pyright",
+			"rust_analyzer",
+			"dockerls",
+			"docker_compose_language_service",
 		},
 	})
-	local registry = require("mason-registry")
-	-- FIXME: not really installing them on startup
-	local packages = {
-		-- language servers
-		"lua_ls",
-		"bashls",
-		"yamlls",
-		"gopls",
-		"pyright",
-		"rust_analyzer",
-		"dockerls",
-		"docker_compose_language_service",
 
+	local registry = require("mason-registry")
+	local packages = {
 		-- formatters
 		"luacheck",
 		"html",

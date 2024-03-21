@@ -25,6 +25,7 @@ local blue3 = "#54c9dd"
 local blue5 = "#89ddff"
 local blue6 = "#b4f9f8"
 local blue7 = "#394b70"
+local blue8 = "#4f84bc"
 local border = "#1b1d2b"
 local border_highlight = "#589ed7"
 local comment = "#636da6"
@@ -32,27 +33,126 @@ local cyan = "#86e1fc"
 local cyan1 = "#cef3ff"
 local dark3 = "#545c7e"
 local dark5 = "#737aa2"
+local pink1 = "#eda8da"
+local green1 = "#96eab0"
+local green2 = "#4fbc9b"
 
 function Ocean.on_highlights(highlights, colors)
 	highlights.LineNr = { fg = sapphire }
 	highlights.CursorLineNr = { fg = peach, bold = true }
+	highlights.Normal = { fg = lavender }
+	highlights["DiagnosticUnderlineWarn"] = { fg = dark5, style = { underline = true } }
 
-	highlights.String = { fg = blue } -- "string"
-	highlights["@string.documentation"] = { fg = overlay_1 }
+	-- python
+	highlights["@variable.python"] = { fg = lavender }
+	highlights["@variable.member.python"] = { fg = blue1 }
+	highlights["@variable.builtin.python"] = { fg = dark5, style = { italic = true } }
+	highlights["@variable.parameter.python"] = { fg = dark5 }
 
-	highlights["@property"] = { fg = blue1 } -- k.property
-	highlights["@field"] = { fg = text } -- class K: property: int
-	highlights["@constructor"] = { fg = blue2, bold = true } -- __init__
-	highlights.Function = { fg = blue2 } -- def f():
-	highlights.Type = { fg = blue2, bold = true } -- class K:
-	highlights.Constant = { fg = pink }
-	highlights["@parameter"] = { fg = border_highlight }
-	highlights["@number"] = { fg = blue6 }
+	highlights["@type.python"] = { fg = blue2, bold = true }
+	highlights["@type.builtin.python"] = { fg = blue8 }
 
-	highlights["@variable.builtin"] = { fg = text, style = { italic = true } } -- self
-	highlights.Statement = { fg = mauve, style = { italic = true } } -- if, for
-	highlights["@operator"] = { fg = mauve } -- in, =, +
-	highlights["@keyword.function"] = { fg = mauve, style = { italic = true } } -- def
+	highlights["@constant.python"] = { fg = green1 }
+	highlights["@constant.builtin.python"] = { fg = blue8 }
+	highlights["@boolean.python"] = { fg = green2 }
+	highlights["@number.python"] = { fg = peach }
+	highlights["@number.float.python"] = { fg = peach }
+
+	highlights["@string.python"] = { fg = text }
+	highlights["@string.documentation.python"] = { fg = overlay_1 }
+
+	highlights["@keyword.python"] = { fg = pink1 }
+	highlights["@keyword.function.python"] = { fg = pink1 }
+	highlights["@keyword.conditional.python"] = { fg = pink1 }
+	highlights["@keyword.exception.python"] = { fg = pink1 }
+	highlights["@keyword.coroutine.python"] = { fg = pink1 }
+	highlights["@keyword.return.python"] = { fg = pink1 }
+	highlights["@keyword.repeat.python"] = { fg = pink1 }
+
+	highlights["@function.python"] = { fg = blue2 }
+	highlights["@function.call.python"] = { fg = blue2 }
+	highlights["@function.method.python"] = { fg = blue2 }
+	highlights["@function.method.call.python"] = { fg = blue2 }
+	highlights["@constructor.python"] = { fg = blue2, bold = true }
+
+	-- go
+	highlights["@type.go"] = { fg = blue8 }
+	highlights["@type.builtin.go"] = { fg = blue8 }
+	highlights["@type.definition.go"] = { fg = blue2, style = { bold = true } }
+
+	highlights["@module.go"] = { fg = blue2, style = { bold = true } }
+	highlights["@string.go"] = { fg = text }
+	highlights["@constant.go"] = { fg = green1 }
+	highlights["@constant.builtin.go"] = { fg = blue8 }
+	highlights["@comment.go"] = { fg = overlay_1, style = { italic = true } }
+
+	highlights["@keyword.go"] = { fg = pink1 }
+	highlights["@keyword.function.go"] = { fg = pink1 }
+	highlights["@keyword.conditional.go"] = { fg = pink1 }
+
+	highlights["@function.go"] = { fg = blue2 }
+	highlights["@function.call.go"] = { fg = blue2 }
+	highlights["@function.method.go"] = { fg = blue2 }
+	highlights["@function.method.call.go"] = { fg = blue2 }
+
+	highlights["@variable.go"] = { fg = lavender }
+	highlights["@variable.member.go"] = { fg = blue1 }
+	highlights["@variable.parameter.go"] = { fg = dark5 }
+
+	highlights["@property.go"] = { fg = blue1 }
+
+	highlights["@number.go"] = { fg = peach }
+	highlights["@number.float.go"] = { fg = peach }
+
+	highlights["@boolean.go"] = { fg = green2 }
+
+	-- gomod
+	highlights["@keyword.gomod"] = { fg = pink1 }
+	highlights["@string.gomod"] = { fg = text }
+
+	-- dockerfile
+	highlights["@keyword.dockerfile"] = { fg = pink1, style = { italic = true, bold = true } }
+	highlights["@property.dockerfile"] = { fg = pink1 }
+	highlights["@string.dockerfile"] = { fg = text }
+	highlights["@constant.dockerfile"] = { fg = pink1 }
+
+	-- yaml
+	highlights["@property.yaml"] = { fg = blue1 }
+	highlights["@string.yaml"] = { fg = text }
+	highlights["@number.yaml"] = { fg = peach }
+	highlights["@boolean.yaml"] = { fg = green2 }
+
+	-- json
+	highlights["@property.json"] = { fg = blue1 }
+	highlights["@string.json"] = { fg = text }
+	highlights["@number.json"] = { fg = peach }
+	highlights["@boolean.json"] = { fg = green2 }
+
+	highlights["jsonKeyword"] = { fg = blue1 }
+	highlights["jsonString"] = { fg = text }
+
+	-- bash
+	highlights["@function.call.bash"] = { fg = blue2 }
+	highlights["@variable.parameter.bash"] = { fg = lavender }
+	highlights["@constant.bash"] = { fg = pink1 }
+	highlights["@string.bash"] = { fg = text }
+
+	-- zsh
+	highlights["zshKeyword"] = { fg = blue2 }
+	highlights["zshString"] = { fg = text }
+	highlights["zshBracket"] = { fg = blue1 }
+
+	-- git_config
+	highlights["@property.git_config"] = { fg = blue1 }
+	highlights["@string.git_config"] = { fg = text }
+
+	-- lua
+	highlights["@lsp.type.parameter.lua"] = { fg = lavender }
+	highlights["@string.lua"] = { fg = text }
+
+	-- toml
+	highlights["@property.toml"] = { fg = blue1 }
+	highlights["@string.toml"] = { fg = lavender }
 end
 
 function Ocean.on_colors(colors)
