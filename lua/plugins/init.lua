@@ -18,4 +18,7 @@ return {
 
 	-- comment lines
 	{ "numToStr/Comment.nvim" },
+
+	-- lua plugin support
+	{ "folke/neodev.nvim", opts = {} },
 }

@@ -23,10 +23,10 @@ M.config = function()
 		s = { "<cmd>SymbolsOutline<cr>", "Symbols" },
 		g = { "<cmd>LazyGit<cr>", "LazyGit" },
 
+		a = { "<cmd> lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		n = { "<cmd>noh<cr>", "No highlight" },
 		N = { "<cmd>lua require('notify').dismiss()<cr>", "Dismiss notifications" },
 
-		R = { ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", "Replace all" },
 		u = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
 		v = { "<cmd>VenvSelect<cr>", "Select venv" },
 
@@ -42,6 +42,8 @@ M.config = function()
 			w = { "<cmd>HopWord<cr>", "Hop Word" },
 			c = { "<cmd>HopChar1<cr>", "Hop Char" },
 		},
+
+		R = { "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", "Refactor" },
 
 		d = {
 			name = "+dap",
@@ -111,6 +113,7 @@ M.config = function()
 			l = { "<Plug>RestNvimLast<cr>", "Run last" },
 			c = { "<Plug>RestNvimPreview<cr>", "cURL" },
 		},
+
 		L = { "<cmd>Lazy<cr>", "Lazy" },
 		M = { "<cmd>Mason<cr>", "Mason" },
 		x = { "<cmd>Lazy reload tokyonight.nvim<cr>", "Reload theme" },
@@ -152,10 +155,12 @@ M.config = function()
 			s = { ":'<,'>sort<cr>", "Sort" },
 			S = { ":'<,'>sort!<cr>", "Sort inverse" },
 			d = { ":'<,'>sort u<cr>", "Delete duplicated lines" },
+			r = { ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", "Replace all" },
 		},
 
-		["p"] = { '"_dP', "paste and keep" },
-		["P"] = { '"_dp', "paste and keep" },
+		R = { "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", "Refactor" },
+		p = { '"_dP', "paste and keep" },
+		P = { '"_dp', "paste and keep" },
 	}
 
 	local v_leader_opts = {

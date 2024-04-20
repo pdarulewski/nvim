@@ -2,7 +2,8 @@
 
 local M = {
 	"rcarriga/nvim-dap-ui",
-	event = "VeryLazy",
+	dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+	commit = "a6beb3a855b42faa1d0fee1081602257719c2c5e",
 }
 
 M.config = function()
