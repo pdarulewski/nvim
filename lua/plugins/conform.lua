@@ -30,6 +30,10 @@ M.config = function()
 		notify_on_error = true,
 	})
 
+	conform.formatters.codespell = {
+		prepend_args = { "--config", "/Users/pd/.config/codespell/setup.cfg" },
+	}
+
 	vim.api.nvim_create_autocmd("BufWritePre", {
 		pattern = "*",
 		callback = function(args)
