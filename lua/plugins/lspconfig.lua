@@ -43,6 +43,13 @@ M.config = function()
 			},
 		},
 	})
+
+  lspconfig.sourcekit.setup({
+    cmd = { "sourcekit-lsp" },
+    filetypes = { "swift" },
+    root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "buildServer.json"),
+  })
+
 end
 
 return M

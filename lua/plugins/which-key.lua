@@ -67,6 +67,14 @@ M.config = function()
 				m = { "<cmd>lua require('dap-go').debug_test()<cr>", "Test method" },
 				l = { "<cmd>lua require('dap-go').debug_last_test()<cr>", "Test last method" },
 			},
+      x = {
+        name = "+xcodebuild",
+        t = {"<cmd>XcodebuildTest<cr>","Run Tests" },
+        s = {"<cmd>XcodebuildTestSelected<cr>","Run Selected Tests" },
+        c = {"<cmd>XcodebuildTestClass<cr>", "Run Current Test Class" },
+        l = {"<cmd>XcodebuildTestRepeat<cr>", "Repeat Last Test Run" }
+      },
+
 			u = { "<cmd>lua require('dapui').toggle({ reset = true })<cr>", "Toggle UI" },
 			r = {
 				"<cmd>lua require('dapui').close()<cr><cmd>lua require('dapui').toggle({ reset = true })<cr>",
@@ -116,9 +124,28 @@ M.config = function()
 
 		L = { "<cmd>Lazy<cr>", "Lazy" },
 		M = { "<cmd>Mason<cr>", "Mason" },
-		x = { "<cmd>Lazy reload tokyonight.nvim<cr>", "Reload theme" },
 		z = { "<cmd>ZenMode<cr>", "Zen Mode" },
 		Z = { "<cmd>Twilight<cr>", "Toggle twilight" },
+
+    x = {
+      name = "+xcodebuild",
+      x = { "<cmd>XcodebuildPicker<cr>", "Show Xcodebuild Actions"},
+      s = { "<cmd>XcodebuildSetup<cr>", "Setup project" },
+      m = { "<cmd>XcodebuildProjectManager<cr>", "Show Project Manager Actions"},
+      b = { "<cmd>XcodebuildBuild<cr>", "Build Project"},
+      B = { "<cmd>XcodebuildBuildForTesting<cr>", "Build For Testing"},
+      r = { "<cmd>XcodebuildBuildRun<cr>", "Build & Run Project"},
+      l = { "<cmd>XcodebuildToggleLogs<cr>", "Toggle Xcodebuild Logs"},
+      c = { "<cmd>XcodebuildToggleCodeCoverage<cr>", "Toggle Code Coverage"},
+      C = { "<cmd>XcodebuildShowCodeCoverageReport<cr>", "Show Code Coverage Report"},
+      e = { "<cmd>XcodebuildTestExplorerToggle<cr>", "Toggle Test Explorer"},
+      f = { "<cmd>XcodebuildFailingSnapshots<cr>", "Show Failing Snapshots"},
+      d = { "<cmd>XcodebuildSelectDevice<cr>", "Select Device"},
+      p = { "<cmd>XcodebuildSelectTestPlan<cr>", "Select Test Plan"},
+      q = { "<cmd>XcodebuildQuickfixLine<cr>", "Quickfix Line"},
+      a = { "<cmd>XcodebuildCodeActions<cr>", "Show Code Actions"},
+
+    }
 	}
 
 	local n_leader_opts = {

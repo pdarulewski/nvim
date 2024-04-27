@@ -12,15 +12,16 @@ M.config = function()
 	end
 
 	lint.linters_by_ft = {
-		lua = { "luacheck" },
-		python = { "ruff" },
-		markdown = { "markdownlint" },
+		ansible = { "ansible-lint" },
+		env = { "shellcheck" },
 		go = { "golangcilint" },
 		json = { "jsonlint" },
-		yaml = { "yamllint" },
-		ansible = { "ansible-lint" },
+		lua = { "luacheck" },
+		markdown = { "markdownlint" },
+		python = { "ruff" },
 		sh = { "shellcheck" },
-		env = { "shellcheck" },
+		swift = { "swiftlint" },
+		yaml = { "yamllint" },
 		["*"] = { "codespell" },
 	}
 
