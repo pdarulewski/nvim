@@ -28,6 +28,7 @@ M.config = function()
 
 			"vim",
 			"vimdoc",
+			"dap_repl",
 
 			"c",
 			"cpp",

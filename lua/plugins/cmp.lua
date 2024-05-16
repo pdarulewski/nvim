@@ -5,6 +5,7 @@ local M = {
 	event = "VeryLazy",
 	dependencies = {
 		"hrsh7th/cmp-path",
+		"rcarriga/cmp-dap",
 	},
 }
 
@@ -54,6 +55,18 @@ M.config = function()
 			["<CR>"] = cmp.mapping.confirm({ select = false }),
 			["<S-Tab>"] = cmp.mapping.select_prev_item(cmp_select),
 			["<Tab>"] = cmp.mapping.select_next_item(cmp_select),
+		},
+
+		-- dap integration
+		enabled = function()
+			return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
+		end,
+	})
+
+	-- dap integration
+	cmp.setup.filetype({ "dap-repl", "dapui_watches", "dapui_hover" }, {
+		sources = {
+			{ name = "dap" },
 		},
 	})
 
