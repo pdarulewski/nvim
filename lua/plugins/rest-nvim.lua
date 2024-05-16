@@ -28,6 +28,9 @@ M.config = function()
 				},
 			},
 		},
+		formatters = {
+			json = "jq",
+		},
 	})
 end
 
