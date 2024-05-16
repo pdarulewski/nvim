@@ -21,6 +21,7 @@ M.config = function()
 		python = { "ruff" },
 		sh = { "shellcheck" },
 		swift = { "swiftlint" },
+		sql = { "sqlfluff" },
 		yaml = { "yamllint" },
 		["*"] = { "codespell" },
 	}
