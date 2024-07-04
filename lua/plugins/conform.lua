@@ -35,6 +35,12 @@ M.config = function()
 		prepend_args = { "--config", "/Users/pd/.config/codespell/setup.cfg" },
 	}
 
+	conform.formatters.taplo = {
+		inherit = false,
+		command = "taplo",
+		args = { "format", "--config", "/Users/pd/.config/taplo/taplo.toml", "-" },
+	}
+
 	vim.api.nvim_create_autocmd("BufWritePre", {
 		pattern = "*",
 		callback = function(args)

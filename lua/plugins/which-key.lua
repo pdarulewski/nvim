@@ -97,6 +97,7 @@ M.config = function()
 			r = { "<cmd>Telescope lsp_references<cr>", "References" },
 			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols" },
 			T = { "<cmd>TodoTelescope<cr>", "TODOs" },
+			p = { "<cmd>Telescope live_grep search_dirs=./.venv hidden=true<cr>", "In project" },
 		},
 
 		t = {

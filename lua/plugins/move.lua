@@ -1,4 +1,4 @@
--- buffer in the middle of the window
+-- move lines up and down
 
 local M = {
 	"matze/vim-move",

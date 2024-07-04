@@ -2,7 +2,7 @@ local Switcher = {}
 
 function Switcher.switchTheme()
 	local theme = os.getenv("THEME")
-	print("Theme: " .. theme)
+	-- print("Theme: " .. theme)
 
 	if theme == "ocean" then
 		return require("plugins.themes.ocean")

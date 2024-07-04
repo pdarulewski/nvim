@@ -20,11 +20,11 @@ M.config = function()
 		workspaces = {
 			{
 				name = "personal",
-				path = "~/repo/vaults/personal",
+				path = "~/vaults/personal",
 			},
 			{
 				name = "work",
-				path = "~/repo/vaults/work",
+				path = "~/vaults/work",
 			},
 		},
 	})

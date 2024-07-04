@@ -17,7 +17,8 @@ M.config = function()
 
 	rest.setup({
 		result_split_in_place = true,
-		result_split_horizontal = true,
+		result_split_horizontal = false,
+		-- result_split_horizontal = true,
 		result = {
 			show_curl_command = true,
 			show_statistics = {

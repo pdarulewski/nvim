@@ -31,5 +31,7 @@ M.config = function()
 			require("lint").try_lint()
 		end,
 	})
+
+	lint.linters.markdownlint.args = { "--config", "/Users/pd/.config/markdownlint/markdownlint.json", "--" }
 end
 return M
