@@ -41,12 +41,12 @@ function Ocean.on_highlights(highlights, colors)
 	highlights.LineNr = { fg = sapphire }
 	highlights.CursorLineNr = { fg = peach, bold = true }
 	highlights.Normal = { fg = lavender }
-	highlights["DiagnosticUnderlineWarn"] = { fg = dark5, style = { underline = true } }
+	highlights["DiagnosticUnderlineWarn"] = { fg = dark5, underline = true }
 
 	-- python
 	highlights["@variable.python"] = { fg = lavender }
 	highlights["@variable.member.python"] = { fg = blue1 }
-	highlights["@variable.builtin.python"] = { fg = dark5, style = { italic = true } }
+	highlights["@variable.builtin.python"] = { fg = dark5, italic = true }
 	highlights["@variable.parameter.python"] = { fg = dark5 }
 
 	highlights["@type.python"] = { fg = blue2, bold = true }
@@ -78,13 +78,13 @@ function Ocean.on_highlights(highlights, colors)
 	-- go
 	highlights["@type.go"] = { fg = blue8 }
 	highlights["@type.builtin.go"] = { fg = blue8 }
-	highlights["@type.definition.go"] = { fg = blue2, style = { bold = true } }
+	highlights["@type.definition.go"] = { fg = blue2, bold = true }
 
-	highlights["@module.go"] = { fg = blue2, style = { bold = true } }
+	highlights["@module.go"] = { fg = blue2, bold = true }
 	highlights["@string.go"] = { fg = text }
 	highlights["@constant.go"] = { fg = green1 }
 	highlights["@constant.builtin.go"] = { fg = blue8 }
-	highlights["@comment.go"] = { fg = overlay_1, style = { italic = true } }
+	highlights["@comment.go"] = { fg = overlay_1, italic = true }
 
 	highlights["@keyword.go"] = { fg = pink1 }
 	highlights["@keyword.function.go"] = { fg = pink1 }
@@ -111,7 +111,7 @@ function Ocean.on_highlights(highlights, colors)
 	highlights["@string.gomod"] = { fg = text }
 
 	-- dockerfile
-	highlights["@keyword.dockerfile"] = { fg = pink1, style = { italic = true, bold = true } }
+	highlights["@keyword.dockerfile"] = { fg = pink1, italic = true, bold = true }
 	highlights["@property.dockerfile"] = { fg = pink1 }
 	highlights["@string.dockerfile"] = { fg = text }
 	highlights["@constant.dockerfile"] = { fg = pink1 }
