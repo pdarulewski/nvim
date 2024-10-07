@@ -13,6 +13,7 @@ M.config = function()
 	conform.setup({
 		formatters_by_ft = {
 			go = { "gofumpt", "goimports-reviser" },
+			javascript = { "prettier" },
 			json = { "prettier" },
 			lua = { "stylua" },
 			markdown = { "markdown-toc" },
@@ -24,6 +25,7 @@ M.config = function()
 			swift = { "swiftformat" },
 			terraform = { "terraform_fmt" },
 			toml = { "taplo" },
+			typescript = { "prettier" },
 			yaml = { "yamlfmt" },
 			zsh = { "shfmt", "shellcheck" },
 			["*"] = { "trim_newlines", "trim_whitespace", "codespell" },
