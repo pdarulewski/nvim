@@ -11,7 +11,9 @@ M.config = function()
     return
   end
 
-  notify.setup()
+  notify.setup({
+    top_down = false
+  })
 end
 
 return M
