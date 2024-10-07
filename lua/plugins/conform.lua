@@ -37,6 +37,10 @@ M.config = function()
 		prepend_args = { "--config", "/Users/pd/.config/codespell/setup.cfg" },
 	}
 
+  conform.formatters["goimports-reviser"] = {
+		prepend_args = { "-rm-unused" },
+  }
+
 	conform.formatters.taplo = {
 		inherit = false,
 		command = "taplo",
