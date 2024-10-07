@@ -28,12 +28,14 @@ vim.o.undolevels = 1000
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- Folding
+-- Folding https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
 vim.o.foldenable = true
+vim.o.foldmethod = "indent" -- fold based on indent, not the lsp syntax
+-- vim.o.foldcolumn = "0" -- don't show the fold column
+vim.o.foldtext = "" -- syntax highlight the fold
 vim.o.foldlevel = 99
-vim.o.foldlevelstart = 99
--- vim.o.foldcolumn = "0"
-vim.o.foldmethod = "indent"
+vim.o.foldlevelstart = 0
+vim.o.foldnestmax = 5
 
 vim.opt.fillchars = {
 	vert = "▕", -- alternatives │
