@@ -13,7 +13,8 @@ M.config = function()
 
   toggleterm.setup({
     open_mapping = [[<c-\>]],
-    direction = "float",
+    direction = "vertical",
+    size = 100,
     insert_mappings = true,
     float_opts = {
       border = "curved",
@@ -22,7 +23,10 @@ M.config = function()
 
   function _G.set_terminal_keymaps()
     local opts = { buffer = 0 }
-    vim.keymap.set('t', '<C-`>', [[<C-\><C-n>]], opts)
+    vim.keymap.set('t', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+    vim.keymap.set('t', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+    vim.keymap.set('t', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+    vim.keymap.set('t', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
   end
 
   -- if you only want these mappings for toggle term use term://*toggleterm#* instead
