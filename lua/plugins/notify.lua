@@ -12,7 +12,8 @@ M.config = function()
   end
 
   notify.setup({
-    top_down = false
+    top_down = false,
+    stages = "static"
   })
 end
 

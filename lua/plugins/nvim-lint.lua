@@ -13,11 +13,11 @@ M.config = function()
 
 	lint.linters_by_ft = {
 		ansible = { "ansible-lint" },
-		env = { "shellcheck" },
+		-- env = { "shellcheck" },
 		go = { "golangcilint" },
 		json = { "jsonlint" },
 		lua = { "luacheck" },
-		markdown = { "markdownlint" },
+		-- markdown = { "markdownlint" },
 		python = { "ruff" },
 		sh = { "shellcheck" },
 		swift = { "swiftlint" },
@@ -33,5 +33,6 @@ M.config = function()
 	})
 
 	lint.linters.markdownlint.args = { "--config", "/Users/pd/.config/markdownlint/markdownlint.json", "--" }
+
 end
 return M

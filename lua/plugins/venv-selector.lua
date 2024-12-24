@@ -13,6 +13,7 @@ M.config = function()
   venv.setup({
     name = ".venv",
     parents = 1,
+    stay_on_this_version = true
   })
 end
 

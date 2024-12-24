@@ -6,7 +6,12 @@
 -- PERF:
 -- NOTE:
 -- TEST:
+
+-- custom
 -- SECTION:
+-- REVIEW:
+-- INFO:
+-- FLAG:
 
 local M = {
   "folke/todo-comments.nvim",
@@ -24,6 +29,7 @@ M.config = function()
   todo.setup({
     keywords = {
       NOTE = { alt = { "SECTION", "REVIEW", "INFO" }, color = "#8087a2" },
+      FLAG = { alt = { "WARNING", "IMPORTANT" }, color = "#FFA500" },
     },
     colors = {
       error = { "DiagnosticError", "ErrorMsg", "#DC2626" },

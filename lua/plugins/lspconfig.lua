@@ -35,21 +35,21 @@ M.config = function()
 		settings = {
 			yaml = {
 				schemas = {
-					["http://json.schemastore.org/pre-commit-config"] = "./.pre-commit-config.{yml,yaml}",
-					["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-					["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
 					["http://json.schemastore.org/circleciconfig"] = ".circleci/**/*.{yml,yaml}",
+					["http://json.schemastore.org/github-action"] = "action.{yml,yaml}",
+					["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
+					["http://json.schemastore.org/pre-commit-config"] = "./.pre-commit-config.{yml,yaml}",
+					["http://json.schemastore.org/github-workflow-template-properties"] = ".github/workflows/*.{yml,yaml}",
 				},
 			},
 		},
 	})
 
-  lspconfig.sourcekit.setup({
-    cmd = { "sourcekit-lsp" },
-    filetypes = { "swift" },
-    root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "buildServer.json"),
-  })
-
+	lspconfig.sourcekit.setup({
+		cmd = { "sourcekit-lsp" },
+		filetypes = { "swift" },
+		root_dir = lspconfig.util.root_pattern(".git", "Package.swift", "buildServer.json"),
+	})
 end
 
 return M
