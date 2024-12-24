@@ -16,6 +16,18 @@ M.config = function()
 	end
 
 	telescope.setup({
+    defaults = {
+      file_ignore_patterns = {
+        "mocks",
+        "go.mod",
+        "go.sum",
+      },
+      mappings = {
+        i = {
+          ["<c-c>"] = require('telescope.actions').delete_buffer
+        }
+      }
+    },
 		pickers = {
 			live_grep = {
 				additional_args = function(opts)
