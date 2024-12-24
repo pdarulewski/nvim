@@ -59,3 +59,14 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
   end,
   group = neovim_group,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  desc = "Disable linting for certain filetypes",
+  pattern = {
+    ".env",
+    "*/helm/*/templates/*.yaml",
+  },
+  callback = function(event)
+    vim.diagnostic.enable(false, { buffer = event.buf })
+  end,
+})
