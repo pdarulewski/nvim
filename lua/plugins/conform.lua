@@ -38,7 +38,10 @@ M.config = function()
 	}
 
   conform.formatters["goimports-reviser"] = {
-		prepend_args = { "-rm-unused" },
+		prepend_args = {
+      "-rm-unused",
+      "-set-alias"
+    },
   }
 
 	conform.formatters.taplo = {
