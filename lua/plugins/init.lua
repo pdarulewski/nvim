@@ -1,12 +1,6 @@
 -- plugins that don't need any setup
 
 return {
-	-- diagnostics, references in quickfix lists
-	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-
 	-- lazygit in nvim terminal
 	{ "kdheepak/lazygit.nvim" },
 

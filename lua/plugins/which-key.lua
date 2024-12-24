@@ -3,6 +3,9 @@
 local M = {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
+  dependencies = {
+    "echasnovski/mini.icons",
+  },
 }
 
 M.config = function()
@@ -12,195 +15,136 @@ M.config = function()
 	end
 
 	which_key.setup({
-		window = {
+		win = {
 			border = "single",
+		},
+		 triggers = {
+   			{ "<leader>", mode = { "n", "v" } },
 		},
 	})
 
 	local n_leader_mappings = {
-		e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
-		p = { "<cmd>Telescope projects<cr>", "Projects" },
-		s = { "<cmd>SymbolsOutline<cr>", "Symbols" },
-		g = { "<cmd>LazyGit<cr>", "LazyGit" },
+    mode = "n",
+    {"<leader>e", "<cmd>NvimTreeToggle<cr>", desc="Explorer" },
+		{"<leader>p", "<cmd>Telescope projects<cr>", desc="Projects" },
+		{"<leader>s", "<cmd>SymbolsOutline<cr>", desc="Symbols" },
+		{"<leader>g", "<cmd>LazyGit<cr>", desc="LazyGit" },
 
-		a = { "<cmd> lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		n = { "<cmd>noh<cr>", "No highlight" },
-		N = { "<cmd>lua require('notify').dismiss()<cr>", "Dismiss notifications" },
+		{"<leader>a", "<cmd> lua vim.lsp.buf.code_action()<cr>", desc="Code Action" },
+		{"<leader>n", "<cmd>noh<cr>", desc="No highlight" },
+		{"<leader>N", "<cmd>lua require('notify').dismiss()<cr>", desc="Dismiss notifications" },
 
-		u = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
-		v = { "<cmd>VenvSelect<cr>", "Select venv" },
+		{"<leader>u", "<cmd>UndotreeToggle<cr>", desc="Undo Tree" },
+		{"<leader>v", "<cmd>VenvSelect<cr>", desc="Select venv" },
 
-		W = { "<cmd>noautocmd w<cr>", "Write without saving" },
-		c = { "<cmd>bp|bd #<cr>", "Close Buffer" },
-		q = { "<cmd>wa<cr><cmd>qa<cr>", "Quit" },
-		i = { "<cmd>Inspect<cr>", "Inspect" },
-		["/"] = { "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>", "Comment" },
+		{"<leader>W", "<cmd>noautocmd w<cr>", desc="Write without saving" },
+		{"<leader>c", "<cmd>bp|bd #<cr>", desc="Close Buffer" },
+		{"<leader>q", "<cmd>wa<cr><cmd>qa<cr>", desc="Quit" },
+		{"<leader>i", "<cmd>Inspect<cr>", desc="Inspect" },
+		{"<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>", desc="Comment" },
 
-		h = {
-			name = "+hop",
-			a = { "<cmd>HopAnywhere<cr>", "Hop Anywhere" },
-			w = { "<cmd>HopWord<cr>", "Hop Word" },
-			c = { "<cmd>HopChar1<cr>", "Hop Char" },
-		},
+		{"<leader>L", "<cmd>Lazy<cr>", desc="Lazy" },
+		{"<leader>M", "<cmd>Mason<cr>", desc="Mason" },
+		{"<leader>z", "<cmd>ZenMode<cr>", desc="Zen Mode" },
+		{"<leader>Z", "<cmd>Twilight<cr>", desc="Toggle twilight" },
+		{"<leader>R", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc="Refactor" },
 
-		R = { "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", "Refactor" },
+    {"<leader>h", group="Hop"},
+    {"<leader>ha", "<cmd>HopAnywhere<cr>", desc="Hop Anywhere" },
+    {"<leader>hw", "<cmd>HopWord<cr>", desc="Hop Word" },
+    {"<leader>hc", "<cmd>HopChar1<cr>", desc="Hop Char" },
 
-		d = {
-			name = "+dap",
-			p = {
-				name = "+python",
-				m = {
-					"<cmd>lua require('dap-python').test_method({ config = { justMyCode = false } })<cr>",
-					"Test Method",
-				},
-				c = {
-					"<cmd>lua require('dap-python').test_class({ config = { justMyCode = false } })<cr>",
-					"Test Class",
-				},
-				s = {
-					"<cmd>lua require('dap-python').debug_selection({ config = { justMyCode = false } })<cr>",
-					"Debug Selection",
-				},
-			},
-			g = {
-				name = "+go",
-				m = { "<cmd>lua require('dap-go').debug_test()<cr>", "Test method" },
-				l = { "<cmd>lua require('dap-go').debug_last_test()<cr>", "Test last method" },
-			},
-      x = {
-        name = "+xcodebuild",
-        t = {"<cmd>XcodebuildTest<cr>","Run Tests" },
-        s = {"<cmd>XcodebuildTestSelected<cr>","Run Selected Tests" },
-        c = {"<cmd>XcodebuildTestClass<cr>", "Run Current Test Class" },
-        l = {"<cmd>XcodebuildTestRepeat<cr>", "Repeat Last Test Run" }
-      },
+    {"<leader>d", group="+dap"},
+    {"<leader>du", "<cmd>lua require('dapui').toggle({ reset = true })<cr>", desc="Toggle UI" },
+    {"<leader>dR", "<cmd>lua require('dapui').close()<cr><cmd>lua require('dapui').toggle({ reset = true })<cr>", desc="Toggle UI" },
+    {"<leader>dc", "<cmd>lua require('dapui').close()<cr>", desc="Close UI" },
+    {"<leader>de", "<cmd>lua require('dapui').eval()<cr>", desc="Evaluate" },
+    {"<leader>dt", "<cmd>lua require('dap').toggle_breakpoint()<cr>", desc="Breakpoint" },
+    {"<leader>dT", "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>", desc="Conditional breakpoint" },
 
-			u = { "<cmd>lua require('dapui').toggle({ reset = true })<cr>", "Toggle UI" },
-			r = {
-				"<cmd>lua require('dapui').close()<cr><cmd>lua require('dapui').toggle({ reset = true })<cr>",
-				"Toggle UI",
-			},
-			c = { "<cmd>lua require('dapui').close()<cr>", "Close UI" },
-			e = { "<cmd>lua require('dapui').eval()<cr>", "Evaluate" },
-			t = { "<cmd>lua require('dap').toggle_breakpoint()<cr>", "Breakpoint" },
-			T = {
-				"<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<cr>",
-				"Conditional breakpoint",
-			},
-		},
+    {"<leader>dp", group="+python"},
+    {"<leader>dpm", "<cmd>lua require('dap-python').test_method({ config = { justMyCode = false } })<cr>", desc="Test Method" },
+    {"<leader>dpc", "<cmd>lua require('dap-python').test_class({ config = { justMyCode = false } })<cr>", desc="Test Class" },
+    {"<leader>dps", "<cmd>lua require('dap-python').debug_selection({ config = { justMyCode = false } })<cr>", desc="Debug Selection" },
 
-		f = {
-			name = "+find",
-			f = { "<cmd>Telescope git_files hidden=true<cr>", "Git Files" },
-			F = { "<cmd>Telescope find_files hidden=true<cr>", "Files" },
-			t = { "<cmd>Telescope live_grep hidden=true<cr>", "Text" },
-			r = { "<cmd>Telescope lsp_references<cr>", "References" },
-			s = { "<cmd>Telescope lsp_document_symbols<cr>", "Symbols" },
-			T = { "<cmd>TodoTelescope<cr>", "TODOs" },
-			p = { "<cmd>Telescope live_grep search_dirs=./.venv hidden=true<cr>", "In project" },
-		},
+    {"<leader>dg", group="+go"},
+    {"<leader>dgm", "<cmd>lua require('dap-go').debug_test()<cr>", desc="Test method" },
+    {"<leader>dgl", "<cmd>lua require('dap-go').debug_last_test()<cr>", desc="Test last method" },
 
-		t = {
-			name = "+trouble",
-			t = { "<cmd>TroubleToggle<cr>", "Trouble" },
-			w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "Workspace diagnostics" },
-			d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Document diagnostics" },
-			q = { "<cmd>TroubleToggle quickfix<cr>", "Quickfix" },
-			l = { "<cmd>TroubleToggle loclist<cr>", "Loclist" },
-			r = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
-		},
+    {"<leader>dr", "<cmd>RustLsp debuggables<cr>", desc="rust"},
 
-		w = {
-			name = "+worktree",
-			c = { "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Create" },
-			l = { "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "List" },
-		},
+    {"<leader>dx", group="+xcode"},
+    {"<leader>dxt", "<cmd>XcodebuildTest<cr>", desc="Run Tests" },
+    {"<leader>dxs", "<cmd>XcodebuildTestSelected<cr>", desc="Run Selected Tests" },
+    {"<leader>dxc", "<cmd>XcodebuildTestClass<cr>", desc="Run Current Test Class" },
+    {"<leader>dxl", "<cmd>XcodebuildTestRepeat<cr>", desc="Repeat Last Test Run" },
 
-		r = {
-			name = "+rest",
-			r = { "<Plug>RestNvim<cr>", "Run" },
-			l = { "<Plug>RestNvimLast<cr>", "Run last" },
-			c = { "<Plug>RestNvimPreview<cr>", "cURL" },
-		},
 
-		L = { "<cmd>Lazy<cr>", "Lazy" },
-		M = { "<cmd>Mason<cr>", "Mason" },
-		z = { "<cmd>ZenMode<cr>", "Zen Mode" },
-		Z = { "<cmd>Twilight<cr>", "Toggle twilight" },
+    {"<leader>f", group="+find"},
+    {"<leader>fb", "<cmd>Telescope buffers<cr>", desc="Buffers" },
+    {"<leader>ff", "<cmd>Telescope git_files hidden=true<cr>", desc="Git Files" },
+    {"<leader>fF", "<cmd>Telescope find_files hidden=true<cr>", desc="Files" },
+    {"<leader>fp", "<cmd>Telescope live_grep search_dirs=./.venv hidden=true<cr>", desc="In project" },
+    {"<leader>fr", "<cmd>Telescope lsp_references<cr>", desc="References" },
+    {"<leader>fs", "<cmd>Telescope lsp_document_symbols<cr>", desc="Symbols" },
+    {"<leader>ft", "<cmd>Telescope live_grep hidden=true<cr>", desc="Text" },
+    {"<leader>fT", "<cmd>TodoTelescope<cr>", desc="TODOs" },
+    {"<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc="Fuzzy search here" },
 
-    x = {
-      name = "+xcodebuild",
-      x = { "<cmd>XcodebuildPicker<cr>", "Show Xcodebuild Actions"},
-      s = { "<cmd>XcodebuildSetup<cr>", "Setup project" },
-      m = { "<cmd>XcodebuildProjectManager<cr>", "Show Project Manager Actions"},
-      b = { "<cmd>XcodebuildBuild<cr>", "Build Project"},
-      B = { "<cmd>XcodebuildBuildForTesting<cr>", "Build For Testing"},
-      r = { "<cmd>XcodebuildBuildRun<cr>", "Build & Run Project"},
-      l = { "<cmd>XcodebuildToggleLogs<cr>", "Toggle Xcodebuild Logs"},
-      c = { "<cmd>XcodebuildToggleCodeCoverage<cr>", "Toggle Code Coverage"},
-      C = { "<cmd>XcodebuildShowCodeCoverageReport<cr>", "Show Code Coverage Report"},
-      e = { "<cmd>XcodebuildTestExplorerToggle<cr>", "Toggle Test Explorer"},
-      f = { "<cmd>XcodebuildFailingSnapshots<cr>", "Show Failing Snapshots"},
-      d = { "<cmd>XcodebuildSelectDevice<cr>", "Select Device"},
-      p = { "<cmd>XcodebuildSelectTestPlan<cr>", "Select Test Plan"},
-      q = { "<cmd>XcodebuildQuickfixLine<cr>", "Quickfix Line"},
-      a = { "<cmd>XcodebuildCodeActions<cr>", "Show Code Actions"},
 
-    }
-	}
+    {"<leader>t", group="+trouble"},
+    {"<leader>tt", "<cmd>Trouble diagnostics toggle<cr>", desc="Trouble" },
 
-	local n_leader_opts = {
-		mode = "n",
-		prefix = "<leader>",
-		buffer = nil,
-		silent = true,
-		noremap = true,
-		nowait = true,
+    {"<leader>w", group="+worktree"},
+    {"<leader>wc", "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", desc="Create" },
+    {"<leader>wl", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc="List" },
+
+    {"<leader>r", group="+rest"},
+    {"<leader>rr", "<cmd>horizontal Rest run<cr>", desc="Run" },
+    {"<leader>rl", "<cmd>Rest last<cr>", desc="Run last" },
+
+    {"<leader>X", group="+xcodebuild"},
+    {"<leader>Xx", "<cmd>XcodebuildPicker<cr>", desc="Show Xcodebuild Actions"},
+    {"<leader>Xs", "<cmd>XcodebuildSetup<cr>", desc="Setup project" },
+    {"<leader>Xm", "<cmd>XcodebuildProjectManager<cr>", desc="Show Project Manager Actions"},
+    {"<leader>Xb", "<cmd>XcodebuildBuild<cr>", desc="Build Project"},
+    {"<leader>XB", "<cmd>XcodebuildBuildForTesting<cr>", desc="Build For Testing"},
+    {"<leader>Xr", "<cmd>XcodebuildBuildRun<cr>", desc="Build & Run Project"},
+    {"<leader>Xl", "<cmd>XcodebuildToggleLogs<cr>", desc="Toggle Xcodebuild Logs"},
+    {"<leader>Xc", "<cmd>XcodebuildToggleCodeCoverage<cr>", desc="Toggle Code Coverage"},
+    {"<leader>XC", "<cmd>XcodebuildShowCodeCoverageReport<cr>", desc="Show Code Coverage Report"},
+    {"<leader>Xe", "<cmd>XcodebuildTestExplorerToggle<cr>", desc="Toggle Test Explorer"},
+    {"<leader>Xf", "<cmd>XcodebuildFailingSnapshots<cr>", desc="Show Failing Snapshots"},
+    {"<leader>Xd", "<cmd>XcodebuildSelectDevice<cr>", desc="Select Device"},
+    {"<leader>Xp", "<cmd>XcodebuildSelectTestPlan<cr>", desc="Select Test Plan"},
+    {"<leader>Xq", "<cmd>XcodebuildQuickfixLine<cr>", desc="Quickfix Line"},
+    {"<leader>Xa", "<cmd>XcodebuildCodeActions<cr>", desc="Show Code Actions"},
 	}
 
 	local v_leader_mappings = {
-		["/"] = { "<Plug>(comment_toggle_linewise_visual)<CR>", "Comment" },
+    mode = "v",
+		{"<leader>R", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc="Refactor" },
+		{"<leader>p", '"_dP', desc="paste and keep" },
+		{"<leader>P", '"_dp', desc="paste and keep" },
+		{"<leader>/", "<Plug>(comment_toggle_linewise_visual)<CR>", desc="Comment" },
 
-		d = {
-			name = "+dap",
-			p = {
-				name = "+python",
-				s = {
-					"<cmd>lua require('dap-python').debug_selection({ config = { justMyCode = false } })<cr>",
-					"Debug Selection",
-				},
-			},
-			u = { "<cmd>lua require('dapui').toggle({ reset = true })<cr>", "Toggle UI" },
-			r = {
-				"<cmd>lua require('dapui').close()<cr><cmd>lua require('dapui').toggle({ reset = true })<cr>",
-				"Toggle UI",
-			},
-			c = { "<cmd>lua require('dapui').close()<cr>", "Close UI" },
-		},
+    {"<leader>d", group="+dap"},
+    {"<leader>du", "<cmd>lua require('dapui').toggle({ reset = true })<cr>", desc="Toggle UI" },
+    {"<leader>dr", "<cmd>lua require('dapui').close()<cr><cmd>lua require('dapui').toggle({ reset = true })<cr>", desc="Toggle UI" },
+    {"<leader>dc", "<cmd>lua require('dapui').close()<cr>", desc="Close UI" },
 
-		v = {
-			name = "+vim",
-			s = { ":'<,'>sort<cr>", "Sort" },
-			S = { ":'<,'>sort!<cr>", "Sort inverse" },
-			d = { ":'<,'>sort u<cr>", "Delete duplicated lines" },
-			r = { ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", "Replace all" },
-		},
+    {"<leader>dp", group="+python"},
+    {"<leader>dps", "<cmd>lua require('dap-python').debug_selection({ config = { justMyCode = false } })<cr>", desc="Debug Selection" },
 
-		R = { "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", "Refactor" },
-		p = { '"_dP', "paste and keep" },
-		P = { '"_dp', "paste and keep" },
+    {"<leader>v", group="+vim"},
+    {"<leader>vs", ":'<,'>sort<cr>", desc="Sort" },
+    {"<leader>vS", ":'<,'>sort!<cr>", desc="Sort inverse" },
+    {"<leader>vd", ":'<,'>sort u<cr>", desc="Delete duplicated lines" },
+    {"<leader>vr", ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", desc="Replace all" },
 	}
 
-	local v_leader_opts = {
-		mode = "v",
-		prefix = "<leader>",
-		buffer = nil,
-		silent = true,
-		noremap = true,
-		nowait = true,
-	}
-	which_key.register(n_leader_mappings, n_leader_opts)
-	which_key.register(v_leader_mappings, v_leader_opts)
+	which_key.add(n_leader_mappings)
+	which_key.add(v_leader_mappings)
 end
 
 return M
