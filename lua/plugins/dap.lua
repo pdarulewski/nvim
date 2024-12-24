@@ -16,6 +16,16 @@ M.config = function()
 		return
 	end
 
+  vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#ff476f', bg = '#394b70' })
+  vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#82aaff', bg = '#394b70' })
+  vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#96eab0', bg = '#394b70' })
+
+  vim.fn.sign_define('DapBreakpoint',          { text='󰃤', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })
+  vim.fn.sign_define('DapBreakpointCondition', { text='󰨮', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })
+  vim.fn.sign_define('DapBreakpointRejected',  { text='', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl= 'DapBreakpoint' })
+  vim.fn.sign_define('DapLogPoint',            { text='', texthl='DapLogPoint',   linehl='DapLogPoint',   numhl= 'DapLogPoint' })
+  vim.fn.sign_define('DapStopped',             { text='', texthl='DapStopped',    linehl='DapStopped',    numhl= 'DapStopped' })
+
 	vim.keymap.set("n", "<F2>", function()
 		require("dap").step_into()
 	end)
@@ -81,7 +91,7 @@ M.config = function()
 		return
 	end
 
-	vscode.load_launchjs(nil, { rt_lldb = { "rust" } })
+	-- vscode.load_launchjs(nil, { rt_lldb = { "rust" } })
 end
 
 return M
