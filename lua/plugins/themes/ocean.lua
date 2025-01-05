@@ -1,4 +1,7 @@
-local Ocean = {}
+local Ocean = {
+	on_highlights = function() end,
+	on_colors = function() end,
+}
 
 -- catppuccin macchiato colors
 local text = "#cad3f5"

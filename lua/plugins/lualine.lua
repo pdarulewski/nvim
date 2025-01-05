@@ -54,21 +54,20 @@ M.config = function()
 			},
 		})
 	elseif theme == "rose" then
-    -- Bubbles config for lualine
-    -- Author: lokesh-krishna
-    -- MIT license, see LICENSE for more details.
-    -- https://github.com/nvim-lualine/lualine.nvim/blob/master/examples/bubbles.lua
+		-- Bubbles config for lualine
+		-- Author: lokesh-krishna
+		-- MIT license, see LICENSE for more details.
+		-- https://github.com/nvim-lualine/lualine.nvim/blob/master/examples/bubbles.lua
 
-    -- stylua: ignore
-    local colors = {
-      blue   = '#3e8fb0',
-      cyan   = '#9ccfd8',
-      black  = '#1f1d2e',
-      white  = '#e0def4',
-      red    = '#eb6f92',
-      violet = '#c4a7e7',
-      grey   = '#2a273f',
-    }
+		local colors = {
+			blue = "#3e8fb0",
+			cyan = "#9ccfd8",
+			black = "#1f1d2e",
+			white = "#e0def4",
+			red = "#eb6f92",
+			violet = "#c4a7e7",
+			grey = "#2a273f",
+		}
 
 		local bubbles_theme = {
 			normal = {
