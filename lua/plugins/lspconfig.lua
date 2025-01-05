@@ -39,7 +39,6 @@ M.config = function()
 					["http://json.schemastore.org/github-action"] = "action.{yml,yaml}",
 					["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
 					["http://json.schemastore.org/pre-commit-config"] = "./.pre-commit-config.{yml,yaml}",
-					["http://json.schemastore.org/github-workflow-template-properties"] = ".github/workflows/*.{yml,yaml}",
 				},
 			},
 		},
