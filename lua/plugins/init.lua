@@ -15,4 +15,7 @@ return {
 
 	-- lua plugin support
 	{ "folke/neodev.nvim", opts = {} },
+
+	-- set transparent background
+	{ "xiyaowong/transparent.nvim" },
 }

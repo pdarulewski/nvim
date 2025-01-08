@@ -15,6 +15,11 @@ if theme.name == "rose" then
 		require("rose-pine").setup({
 			variant = "moon",
 			highlight_groups = theme.theme.highlight_groups,
+			styles = {
+				bold = true,
+				italic = false,
+				transparency = true,
+			},
 		})
 
 		vim.cmd.colorscheme("rose-pine")
