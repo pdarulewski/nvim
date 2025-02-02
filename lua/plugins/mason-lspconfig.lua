@@ -26,7 +26,6 @@ M.config = function()
 			"yamlls",
 			"gopls",
 			"pyright",
-			"rust_analyzer",
 			"dockerls",
 			"docker_compose_language_service",
 		},

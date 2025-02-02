@@ -6,7 +6,6 @@ local M = {
 	dependencies = {
 		"leoluz/nvim-dap-go",
 		"mfussenegger/nvim-dap-python",
-		"simrat39/rust-tools.nvim",
 	},
 }
 
@@ -16,15 +15,30 @@ M.config = function()
 		return
 	end
 
-  vim.api.nvim_set_hl(0, 'DapBreakpoint', { ctermbg = 0, fg = '#ff476f', bg = '#394b70' })
-  vim.api.nvim_set_hl(0, 'DapLogPoint', { ctermbg = 0, fg = '#82aaff', bg = '#394b70' })
-  vim.api.nvim_set_hl(0, 'DapStopped', { ctermbg = 0, fg = '#96eab0', bg = '#394b70' })
+	vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#ff476f", bg = "#394b70" })
+	vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#82aaff", bg = "#394b70" })
+	vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#96eab0", bg = "#394b70" })
 
-  vim.fn.sign_define('DapBreakpoint',          { text='󰃤', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })
-  vim.fn.sign_define('DapBreakpointCondition', { text='󰨮', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl='DapBreakpoint' })
-  vim.fn.sign_define('DapBreakpointRejected',  { text='', texthl='DapBreakpoint', linehl='DapBreakpoint', numhl= 'DapBreakpoint' })
-  vim.fn.sign_define('DapLogPoint',            { text='', texthl='DapLogPoint',   linehl='DapLogPoint',   numhl= 'DapLogPoint' })
-  vim.fn.sign_define('DapStopped',             { text='', texthl='DapStopped',    linehl='DapStopped',    numhl= 'DapStopped' })
+	vim.fn.sign_define(
+		"DapBreakpoint",
+		{ text = "󰃤", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+	)
+	vim.fn.sign_define(
+		"DapBreakpointCondition",
+		{ text = "󰨮", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+	)
+	vim.fn.sign_define(
+		"DapBreakpointRejected",
+		{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+	)
+	vim.fn.sign_define(
+		"DapLogPoint",
+		{ text = "", texthl = "DapLogPoint", linehl = "DapLogPoint", numhl = "DapLogPoint" }
+	)
+	vim.fn.sign_define(
+		"DapStopped",
+		{ text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" }
+	)
 
 	vim.keymap.set("n", "<F2>", function()
 		require("dap").step_into()
@@ -65,33 +79,10 @@ M.config = function()
 	dap_go.setup()
 	dap.configurations.go = {}
 
-	local ok, rust_tools = pcall(require, "rust-tools")
-	if not ok then
-		return
-	end
-
-	local codelldb_path = "/Users/pd/.local/share/codelldb/extension/adapter/codelldb"
-	local liblldb_path = "/Users/pd/.local/share/codelldb/extension/lldb/lib/liblldb.dylib"
-
-	local opts = {
-		server = {
-			on_attach = function(_, bufnr)
-				vim.keymap.set("n", "<F8>", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
-			end,
-		},
-		dap = {
-			adapter = require("rust-tools.dap").get_codelldb_adapter(codelldb_path, liblldb_path),
-		},
-	}
-
-	rust_tools.setup(opts)
-
 	local ok, vscode = pcall(require, "dap.ext.vscode")
 	if not ok then
 		return
 	end
-
-	-- vscode.load_launchjs(nil, { rt_lldb = { "rust" } })
 end
 
 return M
