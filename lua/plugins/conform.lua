@@ -24,6 +24,7 @@ M.config = function()
 			sql = { "pg_format" },
 			swift = { "swiftformat" },
 			terraform = { "terraform_fmt" },
+			["terraform-vars"] = { "terraform_fmt" },
 			toml = { "taplo" },
 			typescript = { "prettier" },
 			yaml = { "yamlfmt" },
@@ -37,12 +38,12 @@ M.config = function()
 		prepend_args = { "--config", "/Users/pd/.config/codespell/setup.cfg" },
 	}
 
-  conform.formatters["goimports-reviser"] = {
+	conform.formatters["goimports-reviser"] = {
 		prepend_args = {
-      "-rm-unused",
-      "-set-alias"
-    },
-  }
+			"-rm-unused",
+			"-set-alias",
+		},
+	}
 
 	conform.formatters.taplo = {
 		inherit = false,
