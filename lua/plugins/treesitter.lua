@@ -35,6 +35,7 @@ M.config = function()
 			"cuda",
 
 			"python",
+			"rst",
 			"rust",
 			"go",
 			"gomod",
