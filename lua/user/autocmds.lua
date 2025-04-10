@@ -107,3 +107,9 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 		vim.bo[event.buf].filetype = "terraform"
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "FileType" }, {
+	desc = "Disable folding in telescope results",
+	pattern = "TelescopeResults",
+	command = [[setlocal foldlevelstart=999]],
+})
