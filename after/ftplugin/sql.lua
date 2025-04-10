@@ -1,1 +1,1 @@
-vim.cmd("setlocal tabstop=2 shiftwidth=2 expandtab")
+vim.cmd("setlocal tabstop=4 shiftwidth=4 expandtab")
