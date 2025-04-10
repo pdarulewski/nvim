@@ -50,4 +50,9 @@ vim.opt.fillchars = {
 
 vim.o.cmdheight = 0 -- disable space between tmux and lualine
 
+vim.diagnostic.config({
+	-- virtual_lines = true,
+	virtual_text = true,
+})
+
 vim.cmd("set shell=zsh")
