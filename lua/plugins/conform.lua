@@ -51,10 +51,14 @@ M.config = function()
 		args = { "format", "--config", "/Users/pd/.config/taplo/taplo.toml", "-" },
 	}
 
-	vim.api.nvim_create_autocmd("BufWritePre", {
+	vim.api.nvim_create_autocmd("BufWritePost", {
 		pattern = "*",
 		callback = function(args)
 			require("conform").format({ bufnr = args.buf })
+			-- safe buffer after format
+			vim.schedule(function()
+				vim.cmd("silent! noautocmd w")
+			end)
 		end,
 	})
 end
