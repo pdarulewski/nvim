@@ -3,7 +3,6 @@
 local M = {
 	"pwntester/octo.nvim",
 	lazy = true,
-	ft = "markdown",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
