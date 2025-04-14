@@ -113,6 +113,12 @@ M.config = function()
 		{ "<leader>fT", "<cmd>TodoTelescope<cr>", desc = "TODOs" },
 		{ "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy search here" },
 
+		{ "<leader>o", group = "+octo" },
+		{ "<leader>op", "<cmd>lua require('octo')<cr><cmd>Octo pr list<cr>", desc = "PRs" },
+		{ "<leader>opr", "<cmd>lua require('octo')<cr><cmd>Octo review<cr>", desc = "Review" },
+		{ "<leader>ops", "<cmd>lua require('octo')<cr><cmd>Octo review submit<cr>", desc = "Submit" },
+		{ "<leader>opc", "<cmd>lua require('octo')<cr><cmd>Octo review comments<cr>", desc = "Submit" },
+
 		{ "<leader>t", group = "+trouble" },
 		{ "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>", desc = "Trouble" },
 
