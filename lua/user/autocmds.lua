@@ -67,6 +67,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	pattern = {
 		".env",
 		"*/helm/*/templates/*.yaml",
+		".air.toml",
 	},
 	callback = function(event)
 		vim.diagnostic.enable(false, { buffer = event.buf })
