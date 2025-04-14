@@ -41,5 +41,11 @@ M.config = function()
 		"lint",
 		"--format=json",
 	}
+
+	lint.linters.luacheck.args = {
+		"--globals",
+		"vim",
+		"--",
+	}
 end
 return M
