@@ -29,13 +29,17 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- Folding https://www.jackfranklin.co.uk/blog/code-folding-in-vim-neovim/
+vim.o.fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:"
+vim.o.foldcolumn = "1"
 vim.o.foldenable = true
-vim.o.foldmethod = "indent" -- fold based on indent, not the lsp syntax
--- vim.o.foldcolumn = "0" -- don't show the fold column
-vim.o.foldtext = "" -- syntax highlight the fold
+
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 0
 vim.o.foldnestmax = 5
+vim.o.foldtext = "" -- syntax highlight the fold
 
 vim.opt.fillchars = {
 	vert = "▕", -- alternatives │
@@ -53,6 +57,9 @@ vim.o.cmdheight = 0 -- disable space between tmux and lualine
 vim.diagnostic.config({
 	-- virtual_lines = true,
 	virtual_text = true,
+	float = {
+		border = "rounded",
+	},
 })
 
 vim.cmd("set shell=zsh")
