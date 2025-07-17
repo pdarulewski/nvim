@@ -19,6 +19,17 @@ M.config = function()
 		return
 	end
 
+	-- lspconfig.jsonls.setup({
+	-- 	settings = {
+	-- 		json = {
+	-- 			schemas = {
+	-- 				["https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json"] = ".release-please-config.json",
+	-- 				["https://raw.githubusercontent.com/googleapis/release-please/main/schemas/manifest.json"] = ".release-please-manifest.json",
+	-- 			},
+	-- 		},
+	-- 	},
+	-- })
+
 	lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
 
 	lspconfig.taplo.setup({
@@ -39,6 +50,7 @@ M.config = function()
 					["http://json.schemastore.org/github-action"] = "action.{yml,yaml}",
 					["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
 					["http://json.schemastore.org/pre-commit-config"] = "./.pre-commit-config.{yml,yaml}",
+					["https://raw.githubusercontent.com/oapi-codegen/oapi-codegen/HEAD/configuration-schema.json"] = ".oapi.{yml,yaml}",
 				},
 			},
 		},

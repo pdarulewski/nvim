@@ -20,16 +20,16 @@ M.config = function()
 					{ id = "stacks", size = 0.25 },
 					{ id = "watches", size = 0.25 },
 				},
-				position = "left",
+				position = "right",
 				size = 50,
 			},
 			{
 				elements = {
-					{ id = "repl", size = 0.5 },
-					{ id = "console", size = 0.5 },
+					{ id = "repl", size = 0.99 },
+					{ id = "console", size = 0.01 },
 				},
 				position = "bottom",
-				size = 10,
+				size = 7,
 			},
 		},
 	})

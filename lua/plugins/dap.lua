@@ -77,12 +77,30 @@ M.config = function()
 	end
 
 	dap_go.setup()
-	dap.configurations.go = {}
 
-	local ok, vscode = pcall(require, "dap.ext.vscode")
-	if not ok then
-		return
+	dap.configurations.go = {}
+	dap.providers.configs["dap.launch.json"] = nil
+
+	dap.providers.configs["air"] = function(bufnr)
+		return {
+			{
+				name = "attach to air",
+				type = "go",
+				mode = "remote",
+				outputMode = "remote",
+				request = "attach",
+				host = "127.0.0.1",
+				port = 9999,
+			},
+		}
 	end
+
+	-- require("dap.ext.vscode").json_decode = require("json5").parse
+
+	-- local ok, vscode = pcall(require, "dap.ext.vscode")
+	-- if not ok then
+	-- 	return
+	-- end
 end
 
 return M
