@@ -53,7 +53,7 @@ M.config = function()
 		{ "<leader>R", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc = "Refactor" },
 
 		{ "<leader>h", group = "Hop" },
-		{ "<leader>ha", "<cmd>HopAnywhere<cr>", desc = "Hop Anywhere" },
+		{ "<leader>hh", "<cmd>HopAnywhere<cr>", desc = "Hop Anywhere" },
 		{ "<leader>hw", "<cmd>HopWord<cr>", desc = "Hop Word" },
 		{ "<leader>hc", "<cmd>HopChar1<cr>", desc = "Hop Char" },
 
@@ -101,6 +101,12 @@ M.config = function()
 		{ "<leader>dxs", "<cmd>XcodebuildTestSelected<cr>", desc = "Run Selected Tests" },
 		{ "<leader>dxc", "<cmd>XcodebuildTestClass<cr>", desc = "Run Current Test Class" },
 		{ "<leader>dxl", "<cmd>XcodebuildTestRepeat<cr>", desc = "Repeat Last Test Run" },
+
+		{ "<leader>C", "<cmd>CodeCompanionChat<cr>", desc = "Chat" },
+
+		{ "<leader>D", group = "+Dbee" },
+		{ "<leader>DD", "<cmd>Dbee toggle<cr>", desc = "Toggle Dbee" },
+		{ "<leader>Ds", "<cmd>lua require('dbee').store('csv', 'output.csv', {})<cr>", desc = "store in csv" },
 
 		{ "<leader>f", group = "+find" },
 		{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
