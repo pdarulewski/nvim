@@ -3,65 +3,50 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter",
 	build = ":TSUpdate",
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter-textobjects",
-	},
-	event = { "BufReadPost", "BufNewFile" },
+	branch = "main",
+	lazy = false,
 }
 
 M.config = function()
-	local ok, treesitter = pcall(require, "nvim-treesitter.configs")
+	local ok, treesitter = pcall(require, "nvim-treesitter")
 	if not ok then
 		return
 	end
 
 	treesitter.setup({
-		ensure_installed = {
-			"bash",
-			"lua",
-			"query",
-			"http",
-
-			"json",
-			"toml",
-			"yaml",
-
-			"vim",
-			"vimdoc",
-			"dap_repl",
-
-			"c",
-			"cpp",
-			"cuda",
-
-			"python",
-			"rst",
-			"rust",
-			"go",
-			"gomod",
-			"gosum",
-			"sql",
-
-			"latex",
-
-			"markdown",
-			"comment",
-			"git_config",
-			"git_rebase",
-			"gitattributes",
-			"gitignore",
-
-			"dockerfile",
-			"make",
-			"cmake",
-			"dot",
-		},
-		sync_install = false,
-		auto_install = true,
-		highlight = {
-			enable = true,
-			additional_vim_regex_highlighting = false,
-		},
+		"bash",
+		"c",
+		"cmake",
+		"comment",
+		"cpp",
+		"cuda",
+		"dap_repl",
+		"dockerfile",
+		"dot",
+		"git_config",
+		"git_rebase",
+		"gitattributes",
+		"gitignore",
+		"go",
+		"gomod",
+		"gosum",
+		"http",
+		"json",
+		"latex",
+		"lua",
+		"make",
+		"markdown",
+		"proto",
+		"python",
+		"query",
+		"rst",
+		"rust",
+		"sql",
+		"terraform",
+		"toml",
+		"vim",
+		"vimdoc",
+		"yaml",
 	})
 end
 

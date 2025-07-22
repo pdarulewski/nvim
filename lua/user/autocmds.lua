@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	end,
 })
 
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile", "FileType" }, {
 	desc = "gotmpl",
 	pattern = {
 		"*/helm/*/templates/*.yaml",

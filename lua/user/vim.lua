@@ -33,8 +33,8 @@ vim.o.fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:"
 vim.o.foldcolumn = "1"
 vim.o.foldenable = true
 
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 0
