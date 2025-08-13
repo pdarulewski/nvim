@@ -79,7 +79,7 @@ M.config = function()
 	dap_go.setup()
 
 	dap.configurations.go = {}
-	dap.providers.configs["dap.launch.json"] = nil
+	-- dap.providers.configs["dap.launch.json"] = nil
 
 	dap.providers.configs["air"] = function(bufnr)
 		return {
@@ -91,6 +91,18 @@ M.config = function()
 				request = "attach",
 				host = "127.0.0.1",
 				port = 9999,
+			},
+		}
+	end
+
+	dap.providers.configs["gofile"] = function(bufnr)
+		return {
+			{
+				name = "run current go file",
+				type = "go",
+				request = "launch",
+				program = "${file}",
+				outputMode = "remote",
 			},
 		}
 	end

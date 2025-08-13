@@ -13,6 +13,7 @@ M.config = function()
 
 	gitsigns.setup({
 		current_line_blame = true,
+		gh = true,
 	})
 end
 

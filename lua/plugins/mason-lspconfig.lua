@@ -37,7 +37,6 @@ M.config = function()
 		"html",
 		"lemminx",
 		"taplo",
-		"sqlls",
 		"marksman",
 		"ltex",
 		"shfmt",

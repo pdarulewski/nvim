@@ -26,6 +26,7 @@ M.config = function()
 	local n_leader_mappings = {
 		mode = "n",
 		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
+		{ "<leader>E", "<cmd>lua require('oil').open_float()<cr>", desc = "Explorer" },
 		{ "<leader>p", "<cmd>Telescope projects<cr>", desc = "Projects" },
 		{ "<leader>s", "<cmd>SymbolsOutline<cr>", desc = "Symbols" },
 
@@ -38,7 +39,6 @@ M.config = function()
 		{ "<leader>q", "<cmd>wa<cr><cmd>qa<cr>", desc = "Quit" },
 
 		{ "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>", desc = "Comment" },
-		{ "<leader>a", "<cmd> lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" },
 
 		{ "<leader>N", "<cmd>lua require('notify').dismiss()<cr>", desc = "Dismiss notifications" },
 
