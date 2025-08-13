@@ -33,13 +33,14 @@ vim.o.fillchars = "eob: ,fold: ,foldopen:,foldsep: ,foldclose:"
 vim.o.foldcolumn = "1"
 vim.o.foldenable = true
 
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
-vim.o.foldlevel = 99
+-- vim.o.foldlevel = 99
 vim.o.foldlevelstart = 0
-vim.o.foldnestmax = 5
+vim.o.foldnestmax = 10
 vim.o.foldtext = "" -- syntax highlight the fold
+-- vim.o.foldtext = [[substitute(getline(v:foldstart),'\\t',repeat('\ ',&tabstop),'g').'...'.trim(getline(v:foldend)).' ('.string(v:foldend-v:foldstart+1).' lines)']]
 
 vim.opt.fillchars = {
 	vert = "▕", -- alternatives │

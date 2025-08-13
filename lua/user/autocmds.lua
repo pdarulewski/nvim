@@ -109,8 +109,16 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	end,
 })
 
--- Disable folding in Telescope's result window.
 vim.api.nvim_create_autocmd({ "FileType" }, {
+	desc = "Disable folding in Telescope results",
 	pattern = "TelescopeResults",
 	command = [[setlocal nofoldenable]],
+})
+
+vim.api.nvim_create_autocmd({ "BufReadPost" }, {
+	desc = "Enable treesitter folding",
+	callback = function(event)
+		vim.o.foldmethod = "expr"
+		vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+	end,
 })
