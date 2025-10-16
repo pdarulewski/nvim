@@ -2,7 +2,7 @@
 local M = {
 	"linux-cultist/venv-selector.nvim",
 	lazy = false,
-	branch = "regexp",
+	branch = "main",
 }
 
 M.config = function()

@@ -25,8 +25,8 @@ M.config = function()
 			},
 			{
 				elements = {
-					{ id = "repl", size = 0.99 },
-					{ id = "console", size = 0.01 },
+					{ id = "repl", size = 0.50 },
+					{ id = "console", size = 0.50 },
 				},
 				position = "bottom",
 				size = 7,

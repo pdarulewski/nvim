@@ -24,6 +24,34 @@ M.config = function()
 
 	local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
+	local kind_icons = {
+		Text = "",
+		Method = "󰆧",
+		Function = "󰊕",
+		Constructor = "",
+		Field = "󰇽",
+		Variable = "󰂡",
+		Class = "󰠱",
+		Interface = "",
+		Module = "",
+		Property = "󰜢",
+		Unit = "",
+		Value = "󰎠",
+		Enum = "",
+		Keyword = "󰌋",
+		Snippet = "",
+		Color = "󰏘",
+		File = "󰈙",
+		Reference = "",
+		Folder = "󰉋",
+		EnumMember = "",
+		Constant = "󰏿",
+		Struct = "",
+		Event = "",
+		Operator = "󰆕",
+		TypeParameter = "󰅲",
+	}
+
 	cmp.setup({
 		window = {
 			completion = cmp.config.window.bordered(),
@@ -61,6 +89,22 @@ M.config = function()
 		enabled = function()
 			return vim.api.nvim_buf_get_option(0, "buftype") ~= "prompt" or require("cmp_dap").is_dap_buffer()
 		end,
+
+		formatting = {
+			fields = { "abbr", "kind", "menu" },
+			format = function(entry, vim_item)
+				vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+				vim_item.menu = ({
+					buffer = "[Buffer]",
+					nvim_lsp = "[LSP]",
+					luasnip = "[LuaSnip]",
+					nvim_lua = "[Lua]",
+					latex_symbols = "[LaTeX]",
+				})[entry.source.name]
+
+				return vim_item
+			end,
+		},
 	})
 
 	-- dap integration
@@ -75,11 +119,11 @@ M.config = function()
 	end, { expr = true })
 
 	vim.keymap.set("i", "<C-u>", function()
-		cmp.scroll_docs(4)
+		cmp.scroll_docs(-4)
 	end, { expr = true })
 
 	vim.keymap.set("i", "<C-d>", function()
-		cmp.scroll_docs(-4)
+		cmp.scroll_docs(4)
 	end, { expr = true })
 end
 

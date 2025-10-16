@@ -20,10 +20,6 @@
 
 ![dap](https://github.com/pdarulewski/nvim/assets/28163067/1e8fba4b-c57e-4a2b-9c93-9e36f0f60d01)
 
-## [VonHeikemen/lsp-zero.nvim](https://github.com/VonHeikemen/lsp-zero.nvim/tree/v2.x)
-
-![lsp](https://github.com/pdarulewski/nvim/assets/28163067/91aac228-e64b-4ba9-a44c-84a809aa86e9)
-
 ## [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 
 ![telescope](https://github.com/pdarulewski/nvim/assets/28163067/a68b65a4-ce5e-453a-a25d-e3b5dc8fdcae)

@@ -12,7 +12,6 @@ M.config = function()
 		["dap-repl"] = false,
 		["dotenv"] = false,
 	})
-	vim.g.copilot_settings = { selectedCompletionModel = "gpt-4o-copilot" }
 end
 
 return M
