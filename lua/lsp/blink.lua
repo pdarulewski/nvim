@@ -9,6 +9,7 @@ return {
 		keymap = {
 			preset = "default",
 
+			["<CR>"] = { "select_and_accept", "fallback" },
 			["<S-Tab>"] = { "select_prev", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
 		},

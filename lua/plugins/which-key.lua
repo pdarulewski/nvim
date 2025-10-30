@@ -26,53 +26,51 @@ M.config = function()
 	local n_leader_mappings = {
 		mode = "n",
 		-- Basic
+		{ "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>", desc = "Comment" },
+
 		{ "<leader>e", "<cmd>NvimTreeToggle<cr>", desc = "Explorer" },
 		{ "<leader>E", "<cmd>lua require('oil').open_float()<cr>", desc = "Explorer" },
-		{ "<leader>s", "<cmd>SymbolsOutline<cr>", desc = "Symbols" },
-		{ "<leader>n", "<cmd>noh<cr>", desc = "No highlight" },
-		{ "<leader>w", "<cmd>set wrap!<cr>", desc = "Toggle wrap" },
+
 		{ "<leader>W", "<cmd>noautocmd w<cr>", desc = "Write without saving" },
 		{ "<leader>c", "<cmd>bp|bd #<cr>", desc = "Close Buffer" },
+		{ "<leader>n", "<cmd>noh<cr>", desc = "No highlight" },
+		{ "<leader>w", "<cmd>set wrap!<cr>", desc = "Toggle wrap" },
 		{ "<leader>q", "<cmd>wa<cr><cmd>qa<cr>", desc = "Quit" },
-		{ "<leader>/", "<cmd>lua require('Comment.api').toggle.linewise.current()<cr>", desc = "Comment" },
+
+		{ "<leader>F", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc = "Refactor" },
+
+		{ "<leader>s", "<cmd>SymbolsOutline<cr>", desc = "Symbols" },
 		{ "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Undo Tree" },
-		{ "<leader>N", "<cmd>lua require('notify').dismiss()<cr>", desc = "Dismiss notifications" },
-		{ "<leader>R", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc = "Refactor" },
 		{ "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 
 		-- Meta
-		{ "<leader>x", group = "+meta" },
-		{ "<leader>xi", "<cmd>Inspect<cr>", desc = "Inspect treesitter object" },
+		{ "<leader>1", group = "+settings" },
+		{ "<leader>1n", "<cmd>lua require('notify').dismiss()<cr>", desc = "Dismiss notifications" },
+		{ "<leader>1i", "<cmd>Inspect<cr>", desc = "Inspect treesitter object" },
+		{ "<leader>1L", "<cmd>Lazy<cr>", desc = "Lazy" },
+		{ "<leader>1M", "<cmd>Mason<cr>", desc = "Mason" },
 
-		-- DAP
 		-- Python
-		{ "<leader>v", "<cmd>VenvSelect<cr>", desc = "Select venv" },
-		{ "<leader>dp", group = "+python" },
+		{ "<leader>P", group = "+python" },
+		{ "<leader>Pv", "<cmd>VenvSelect<cr>", desc = "Select venv" },
 		{
-			"<leader>dpm",
+			"<leader>Pm",
 			"<cmd>lua require('dap-python').test_method({ config = { justMyCode = false } })<cr>",
 			desc = "Test Method",
 		},
 		{
-			"<leader>dpc",
+			"<leader>Pc",
 			"<cmd>lua require('dap-python').test_class({ config = { justMyCode = false } })<cr>",
 			desc = "Test Class",
 		},
-		{
-			"<leader>dps",
-			"<cmd>lua require('dap-python').debug_selection({ config = { justMyCode = false } })<cr>",
-			desc = "Debug Selection",
-		},
+
 		-- Go
-		{ "<leader>dg", group = "+go" },
-		{ "<leader>dgm", "<cmd>lua require('dap-go').debug_test()<cr>", desc = "Test method" },
-		{ "<leader>dgl", "<cmd>lua require('dap-go').debug_last_test()<cr>", desc = "Test last method" },
+		{ "<leader>G", group = "+go" },
+		{ "<leader>Gm", "<cmd>lua require('dap-go').debug_test()<cr>", desc = "Test method" },
+
 		-- Rust
-		{ "<leader>dr", "<cmd>RustLsp debuggables<cr>", desc = "rust" },
-		-- Settings
-		{ "<leader>S", group = "Settings" },
-		{ "<leader>SL", "<cmd>Lazy<cr>", desc = "Lazy" },
-		{ "<leader>SM", "<cmd>Mason<cr>", desc = "Mason" },
+		{ "<leader>R", group = "+rust" },
+		{ "<leader>Rd", "<cmd>RustLsp debuggables<cr>", desc = "rust" },
 
 		{ "<leader>h", group = "Hop" },
 		{ "<leader>hh", "<cmd>HopAnywhere<cr>", desc = "Hop Anywhere" },
@@ -127,10 +125,12 @@ M.config = function()
 
 	local v_leader_mappings = {
 		mode = "v",
-		{ "<leader>R", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc = "Refactor" },
+		{ "<leader>/", "<Plug>(comment_toggle_linewise_visual)<CR>", desc = "Comment" },
+
 		{ "<leader>p", '"_dP', desc = "paste and keep" },
 		{ "<leader>P", '"_dp', desc = "paste and keep" },
-		{ "<leader>/", "<Plug>(comment_toggle_linewise_visual)<CR>", desc = "Comment" },
+
+		{ "<leader>F", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc = "Refactor" },
 
 		{ "<leader>d", group = "+dap" },
 		{ "<leader>du", "<cmd>lua require('dapui').toggle({ reset = true })<cr>", desc = "Toggle UI" },
@@ -141,9 +141,9 @@ M.config = function()
 		},
 		{ "<leader>dc", "<cmd>lua require('dapui').close()<cr>", desc = "Close UI" },
 
-		{ "<leader>dp", group = "+python" },
+		{ "<leader>P", group = "+python" },
 		{
-			"<leader>dps",
+			"<leader>Ps",
 			"<cmd>lua require('dap-python').debug_selection({ config = { justMyCode = false } })<cr>",
 			desc = "Debug Selection",
 		},
