@@ -38,9 +38,7 @@ M.config = function()
 		{ "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Undo Tree" },
 		{ "<leader>N", "<cmd>lua require('notify').dismiss()<cr>", desc = "Dismiss notifications" },
 		{ "<leader>R", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc = "Refactor" },
-		{ "<leader>G", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-		{ "<leader>z", "<cmd>ZenMode<cr>", desc = "Zen Mode" },
-		{ "<leader>Z", "<cmd>Twilight<cr>", desc = "Toggle twilight" },
+		{ "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 
 		-- Meta
 		{ "<leader>x", group = "+meta" },
@@ -97,8 +95,6 @@ M.config = function()
 			desc = "Conditional breakpoint",
 		},
 
-		{ "<leader>C", "<cmd>CodeCompanionChat<cr>", desc = "Chat" },
-
 		{ "<leader>D", group = "+Dbee" },
 		{ "<leader>DD", "<cmd>Dbee toggle<cr>", desc = "Toggle Dbee" },
 		{ "<leader>Ds", "<cmd>lua require('dbee').store('csv', 'output.csv', {})<cr>", desc = "store in csv" },
@@ -114,12 +110,6 @@ M.config = function()
 		{ "<leader>fT", "<cmd>TodoTelescope<cr>", desc = "TODOs" },
 		{ "<leader>f/", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Fuzzy search here" },
 
-		{ "<leader>o", group = "+octo" },
-		{ "<leader>op", "<cmd>lua require('octo')<cr><cmd>Octo pr list<cr>", desc = "PRs" },
-		{ "<leader>opr", "<cmd>lua require('octo')<cr><cmd>Octo review<cr>", desc = "Review" },
-		{ "<leader>ops", "<cmd>lua require('octo')<cr><cmd>Octo review submit<cr>", desc = "Submit" },
-		{ "<leader>opc", "<cmd>lua require('octo')<cr><cmd>Octo review comments<cr>", desc = "Submit" },
-
 		{ "<leader>t", group = "+trouble" },
 		{ "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>", desc = "Trouble" },
 
@@ -133,29 +123,6 @@ M.config = function()
 		{ "<leader>r", group = "+rest" },
 		{ "<leader>rr", "<cmd>horizontal Rest run<cr>", desc = "Run" },
 		{ "<leader>rl", "<cmd>Rest last<cr>", desc = "Run last" },
-
-		-- { "<leader>dx", group = "+xcode" },
-		-- { "<leader>dxt", "<cmd>XcodebuildTest<cr>", desc = "Run Tests" },
-		-- { "<leader>dxs", "<cmd>XcodebuildTestSelected<cr>", desc = "Run Selected Tests" },
-		-- { "<leader>dxc", "<cmd>XcodebuildTestClass<cr>", desc = "Run Current Test Class" },
-		-- { "<leader>dxl", "<cmd>XcodebuildTestRepeat<cr>", desc = "Repeat Last Test Run" },
-		--
-		-- { "<leader>X", group = "+xcodebuild" },
-		-- { "<leader>Xx", "<cmd>XcodebuildPicker<cr>", desc = "Show Xcodebuild Actions" },
-		-- { "<leader>Xs", "<cmd>XcodebuildSetup<cr>", desc = "Setup project" },
-		-- { "<leader>Xm", "<cmd>XcodebuildProjectManager<cr>", desc = "Show Project Manager Actions" },
-		-- { "<leader>Xb", "<cmd>XcodebuildBuild<cr>", desc = "Build Project" },
-		-- { "<leader>XB", "<cmd>XcodebuildBuildForTesting<cr>", desc = "Build For Testing" },
-		-- { "<leader>Xr", "<cmd>XcodebuildBuildRun<cr>", desc = "Build & Run Project" },
-		-- { "<leader>Xl", "<cmd>XcodebuildToggleLogs<cr>", desc = "Toggle Xcodebuild Logs" },
-		-- { "<leader>Xc", "<cmd>XcodebuildToggleCodeCoverage<cr>", desc = "Toggle Code Coverage" },
-		-- { "<leader>XC", "<cmd>XcodebuildShowCodeCoverageReport<cr>", desc = "Show Code Coverage Report" },
-		-- { "<leader>Xe", "<cmd>XcodebuildTestExplorerToggle<cr>", desc = "Toggle Test Explorer" },
-		-- { "<leader>Xf", "<cmd>XcodebuildFailingSnapshots<cr>", desc = "Show Failing Snapshots" },
-		-- { "<leader>Xd", "<cmd>XcodebuildSelectDevice<cr>", desc = "Select Device" },
-		-- { "<leader>Xp", "<cmd>XcodebuildSelectTestPlan<cr>", desc = "Select Test Plan" },
-		-- { "<leader>Xq", "<cmd>XcodebuildQuickfixLine<cr>", desc = "Quickfix Line" },
-		-- { "<leader>Xa", "<cmd>XcodebuildCodeActions<cr>", desc = "Show Code Actions" },
 	}
 
 	local v_leader_mappings = {

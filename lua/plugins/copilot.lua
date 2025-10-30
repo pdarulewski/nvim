@@ -3,6 +3,7 @@
 local M = {
 	"github/copilot.vim",
 	event = "VeryLazy",
+	enabled = false,
 }
 
 M.config = function()

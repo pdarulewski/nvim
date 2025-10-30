@@ -4,6 +4,8 @@ vim.o.relativenumber = true -- relative line numbers
 vim.o.list = true -- white characters
 vim.o.listchars = "eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:·"
 
+vim.o.winborder = "rounded"
+
 vim.o.colorcolumn = "120"
 vim.o.smartindent = true
 vim.o.scrolloff = 6

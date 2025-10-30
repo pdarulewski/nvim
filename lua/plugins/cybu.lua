@@ -31,6 +31,7 @@ M.config = function()
 				last_used = {
 					switch = "immediate",
 					view = "paging",
+					update_on = "text_changed",
 				},
 			},
 		},

@@ -16,13 +16,11 @@ function Switcher.switchTheme()
 			name = "rose",
 			theme = require("plugins.themes.rose"),
 		}
-	elseif theme == "stone" then
-		return {
-			name = "stone",
-			theme = require("plugins.themes.stone"),
-		}
 	else
-		error("Theme not found")
+		return {
+			name = "rose",
+			theme = require("plugins.themes.rose"),
+		}
 	end
 end
 
