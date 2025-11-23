@@ -67,7 +67,7 @@ M.config = function()
 		return
 	end
 
-	dap_python.setup("/Users/pd/repo/debug/.venv/bin/python")
+	dap_python.setup("/Users/pd/dev/debug/.venv/bin/python")
 	dap_python.test_runner = "pytest"
 	dap.configurations.python = {}
 
