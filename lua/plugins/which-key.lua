@@ -39,9 +39,12 @@ M.config = function()
 
 		{ "<leader>F", "<cmd> lua require('telescope').extensions.refactoring.refactors()<cr>", desc = "Refactor" },
 
-		{ "<leader>s", "<cmd>SymbolsOutline<cr>", desc = "Symbols" },
+		{ "<leader>s", "<cmd>Outline<cr>", desc = "Symbols" },
 		{ "<leader>u", "<cmd>UndotreeToggle<cr>", desc = "Undo Tree" },
 		{ "<leader>g", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+
+		{ "<leader>ll", "<cmd>lua gh_open_in_browser()<cr>", desc = "Open GitHub" },
+		{ "<leader>lc", "<cmd>lua gh_copy_to_clipboard()<cr>", desc = "Copy link GitHub" },
 
 		-- Meta
 		{ "<leader>1", group = "+settings" },
@@ -119,7 +122,7 @@ M.config = function()
 		{ "<leader>wl", "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", desc = "List" },
 
 		{ "<leader>r", group = "+rest" },
-		{ "<leader>rr", "<cmd>horizontal Rest run<cr>", desc = "Run" },
+		{ "<leader>rr", "<cmd>Rest run<cr>", desc = "Run" },
 		{ "<leader>rl", "<cmd>Rest last<cr>", desc = "Run last" },
 	}
 

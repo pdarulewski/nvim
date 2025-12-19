@@ -144,3 +144,14 @@ vim.api.nvim_create_autocmd({ "BufReadPost" }, {
 		vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 	end,
 })
+
+_G.gh_open_in_browser = function()
+	vim.cmd("GH")
+end
+
+_G.gh_copy_to_clipboard = function()
+	local original = vim.g.gh_open_command
+	vim.g.gh_open_command = 'fn() { echo "$@" | pbcopy; }; fn '
+	vim.cmd("GH")
+	vim.g.gh_open_command = original -- Restore original
+end
