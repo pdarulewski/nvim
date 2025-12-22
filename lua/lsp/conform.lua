@@ -12,12 +12,13 @@ M.config = function()
 
 	conform.setup({
 		formatters_by_ft = {
+			c = { "clang-format" },
 			go = { "gofumpt", "goimports-reviser" },
 			javascript = { "prettier" },
 			json = { "prettier" },
 			lua = { "stylua" },
-			markdown = { "markdown-toc" },
-			-- markdown = { "markdown-toc", "mdformat" },
+			markdown = { "mdoformat" },
+			nix = { "alejandra" },
 			python = { "ruff_fix", "ruff_format" },
 			rust = { "rustfmt" },
 			sh = { "shfmt", "shellcheck" },

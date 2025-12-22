@@ -7,11 +7,6 @@ local M = {
 }
 
 M.config = function()
-	local ok, mason = pcall(require, "mason")
-	if not ok then
-		return
-	end
-
 	local ok, mason_lspconfig = pcall(require, "mason-lspconfig")
 	if not ok then
 		return
@@ -21,11 +16,12 @@ M.config = function()
 		ensure_installed = {
 			"bashls",
 			"buf_ls",
+			"clangd",
 			"docker_compose_language_service",
 			"dockerls",
 			"gopls",
-			"html",
 			"lua_ls",
+			"nil_ls",
 			"pyright",
 			"yamlls",
 		},
@@ -33,35 +29,30 @@ M.config = function()
 
 	local registry = require("mason-registry")
 	local packages = {
-		-- formatters
-		"luacheck",
-		"html",
-		"lemminx",
-		"taplo",
-		"marksman",
-		"ltex",
-		"shfmt",
-		"sql_formatter",
-		"markdown-toc",
-		"mdformat",
-		"luacheck",
-		"prettier",
-
-		-- linters
-		"ansible-lint",
-		"jsonlint",
-		"markdownlint",
-		"yamllint",
-		"shellcheck",
+		"alejandra",
 		"codespell",
+		"html-lsp",
+		"jsonlint",
+		"ltex-ls",
+		"luacheck",
+		"mdformat",
+		"prettier",
+		"shellcheck",
+		"shfmt",
+		"sql-formatter",
+		"stylua",
+		"taplo",
+		"yamllint",
 	}
 
+	registry.refresh()
+
 	for _, pkg_name in ipairs(packages) do
-		local ok, pkg = pcall(registry.get_package, pkg_name)
-		if ok then
-			if not pkg:is_installed() then
-				pkg:install()
-			end
+		if not registry.is_installed(pkg_name) then
+			print(string.format("Installing %s", pkg_name))
+
+			local pkg = registry.get_package(pkg_name)
+			pkg:install()
 		end
 	end
 end
