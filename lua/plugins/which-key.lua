@@ -52,6 +52,7 @@ M.config = function()
 		{ "<leader>1i", "<cmd>Inspect<cr>", desc = "Inspect treesitter object" },
 		{ "<leader>1L", "<cmd>Lazy<cr>", desc = "Lazy" },
 		{ "<leader>1M", "<cmd>Mason<cr>", desc = "Mason" },
+		{ "<leader>1I", "<cmd>lua vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())<cr>", desc = "Mason" },
 
 		-- Python
 		{ "<leader>P", group = "+python" },

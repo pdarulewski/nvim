@@ -5,12 +5,6 @@ local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " "
 
--- buffer navigation
-map("n", "<C-l>", "<C-w>l", opts)
-map("n", "<C-h>", "<C-w>h", opts)
-map("n", "<C-j>", "<C-w>j", opts)
-map("n", "<C-k>", "<C-w>k", opts)
-
 -- keep cursor in place while removing newlines with J
 map("n", "J", "mzJ`z", opts)
 
@@ -25,10 +19,10 @@ map("n", "n", "nzzzv", opts)
 map("n", "N", "Nzzzv", opts)
 
 -- resize windows
-map("n", "<C-Up>", ":res +2<CR>", opts)
-map("n", "<C-Down>", ":res -2<CR>", opts)
-map("n", "<C-Left>", ":vertical res +2<CR>", opts)
-map("n", "<C-Right>", ":vertical res -2<CR>", opts)
+map("n", "<C-S-h>", ":vertical res +2<CR>", opts)
+map("n", "<C-S-j>", ":res -2<CR>", opts)
+map("n", "<C-S-k>", ":res +2<CR>", opts)
+map("n", "<C-S-l>", ":vertical res -2<CR>", opts)
 
 -- save buffer
 map("i", "jk", "<ESC>:wa<cr>", opts)
