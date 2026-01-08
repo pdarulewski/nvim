@@ -1,5 +1,7 @@
 # ∇ nvim
 
+Moved to my [dotfiles](https://github.com/pdarulewski/dotfiles)
+
 ## [goolord/alpha-nvim](https://github.com/goolord/alpha-nvim)
 
 ![alpha](https://github.com/pdarulewski/nvim/assets/28163067/bf1ba970-b197-454f-9ba1-29a3db2d50e3)
